@@ -101,7 +101,7 @@ export default function Navbar() {
                 className="flex items-center gap-2.5 group"
                 aria-label="Hashhbit Studio Home"
               >
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#4B2E63] via-[#65477F] to-[#B69A68] flex items-center justify-center text-[#F7F3EC] font-display font-bold text-lg shadow-sm shadow-[#4B2E63]/20 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#4B2E63] via-[#65477F] to-[#B69A68] flex items-center justify-center text-[#F7F3EC] font-display font-bold text-lg shadow-sm shadow-[#4B2E63]/20 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
                   <span>H#</span>
                 </div>
 
@@ -174,22 +174,22 @@ export default function Navbar() {
                 damping: 30,
                 stiffness: 280,
               }}
-              className="w-full max-w-xl h-full bg-[#F7F3EC] border-l border-[#B8A6C9]/40 shadow-2xl p-6 md:p-10 flex flex-col justify-between overflow-y-auto"
+              className="w-full max-w-xl h-full bg-[#F7F3EC] border-l border-[#B8A6C9]/40 shadow-2xl p-2 md:p-10 flex flex-col justify-between overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header inside drawer */}
               <div className="flex items-center justify-between pb-6 border-b border-[#D8CEC3]/60">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#4B2E63] text-[#F7F3EC] flex items-center justify-center font-display font-bold text-sm">
+                  <div className="w-10 h-10 rounded-lg bg-[#4B2E63] text-[#F7F3EC] flex items-center justify-center font-display font-bold text-sm">
                     H#
                   </div>
 
                   <div>
-                    <h3 className="font-display font-bold text-sm text-[#282126]">
+                    <h3 className="font-poppins font-bold text-sm text-[#282126]">
                       HASHHBIT STUDIO
                     </h3>
 
-                    <p className="text-[10px] text-[#65477F] uppercase tracking-widest font-semibold">
+                    <p className="text-[10px] text-[#65477F] uppercase tracking-widest font-bold font-raleway">
                       Digital & Web Architecture
                     </p>
                   </div>
@@ -205,8 +205,8 @@ export default function Navbar() {
               </div>
 
               {/* Navigation Links */}
-              <div className="py-8 space-y-3">
-                <p className="text-xs uppercase tracking-widest text-[#65477F] font-semibold mb-4 px-2">
+              <div className="py-15 space-y-3">
+                <p className="text-xs uppercase tracking-widest text-[#65477F] font-semibold mb-4 px-2 font-raleway">
                   Navigation Index
                 </p>
 
@@ -221,24 +221,21 @@ export default function Navbar() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.05 * idx }}
-                      className="group flex items-center justify-between p-3.5 rounded-2xl hover:bg-[#E8DED2]/80 border border-transparent hover:border-[#B8A6C9]/50 transition-all duration-200"
+                      className="group flex items-center justify-between p-3.5 rounded-2xl hover:bg-[#E8DED2]/80 border border-transparent hover:border-[#B8A6C9]/50 transition-all duration-200 font-raleway"
                     >
                       <div className="flex items-center gap-4">
-                        <span className="text-xs font-mono text-[#65477F] group-hover:text-[#4B2E63] font-bold">
-                          {link.count}
-                        </span>
 
                         <div className="w-8 h-8 rounded-xl bg-[#D9CEE3]/50 group-hover:bg-[#65477F] group-hover:text-[#F7F3EC] text-[#4B2E63] flex items-center justify-center transition-all duration-300">
                           <Icon className="w-4 h-4" />
                         </div>
 
-                        <span className="font-display text-lg md:text-xl font-bold text-[#282126] group-hover:text-[#4B2E63] transition-colors">
+                        <span className="font-raleway text-lg md:text-xl font-semibold text-[#282126] group-hover:text-[#4B2E63] transition-colors">
                           {link.name}
                         </span>
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] uppercase font-semibold px-2 py-0.5 rounded-full bg-[#B8A6C9]/30 text-[#4B2E63]">
+                        <span className="text-[10px] uppercase font-bold font-raleway px-2 py-0.5 rounded-full bg-[#B8A6C9]/30 text-[#4B2E63]">
                           {link.tag}
                         </span>
 
@@ -249,44 +246,7 @@ export default function Navbar() {
                 })}
               </div>
 
-              {/* Footer */}
-              <div className="pt-6 border-t border-[#D8CEC3]/60 space-y-4">
-                <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="p-3 rounded-xl bg-[#E8DED2]/50 border border-[#D8CEC3]">
-                    <span className="text-[#65477F] font-semibold block text-[10px] uppercase tracking-wider">
-                      Direct Inquiries
-                    </span>
-
-                    <a
-                      href="mailto:hello@hashhbit.studio"
-                      className="font-medium text-[#282126] hover:text-[#4B2E63] transition-colors"
-                    >
-                      hello@hashhbit.studio
-                    </a>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-[#E8DED2]/50 border border-[#D8CEC3]">
-                    <span className="text-[#65477F] font-semibold block text-[10px] uppercase tracking-wider">
-                      Estimated Delivery
-                    </span>
-
-                    <span className="font-medium text-[#282126]">
-                      Fast-track 2-4 Weeks
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between text-xs text-[#65477F]">
-                  <span>
-                    © {new Date().getFullYear()} Hashhbit Studio
-                  </span>
-
-                  <div className="flex items-center gap-1 text-[11px] bg-[#D9CEE3]/40 px-2.5 py-1 rounded-full text-[#4B2E63]">
-                    <Command className="w-3 h-3" />
-                    <span>Press ESC to close</span>
-                  </div>
-                </div>
-              </div>
+              
             </motion.div>
           </motion.div>
         )}
