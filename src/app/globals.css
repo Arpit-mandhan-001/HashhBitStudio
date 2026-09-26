@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  /* Requested Color Palette Tokens */
+  --color-deep-purple: #4B2E63;
+  --color-royal-purple: #65477F;
+  --color-dusty-lavender: #B8A6C9;
+  --color-light-lavender: #D9CEE3;
+  --color-warm-ivory: #F7F3EC;
+  --color-champagne-beige: #E8DED2;
+  --color-espresso: #282126;
+  --color-muted-gold: #B69A68;
+  --color-soft-taupe: #D8CEC3;
+
+  /* Semantic UI Tokens */
+  --bg-primary: var(--color-warm-ivory);
+  --bg-surface: var(--color-champagne-beige);
+  --text-main: var(--color-espresso);
+  --accent-primary: var(--color-deep-purple);
+  --accent-secondary: var(--color-royal-purple);
+  --accent-highlight: var(--color-muted-gold);
+  --border-subtle: var(--color-soft-taupe);
+  --card-glass: rgba(232, 222, 210, 0.65);
+  --card-glass-border: rgba(184, 166, 201, 0.35);
+}
+
+@theme {
+  --color-deep-purple: var(--color-deep-purple);
+  --color-royal-purple: var(--color-royal-purple);
+  --color-dusty-lavender: var(--color-dusty-lavender);
+  --color-light-lavender: var(--color-light-lavender);
+  --color-warm-ivory: var(--color-warm-ivory);
+  --color-champagne: var(--color-champagne-beige);
+  --color-espresso: var(--color-espresso);
+  --color-muted-gold: var(--color-muted-gold);
+  --color-soft-taupe: var(--color-soft-taupe);
+  
+  --font-sans: var(--font-sans), sans-serif;
+  --font-display: var(--font-display), sans-serif;
+}
+
+/* Custom Smooth Transitions & Luxury Glass Utilities */
+.glass-panel {
+  background: rgba(247, 243, 236, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 166, 201, 0.35);
+}
+
+.glass-card {
+  background: rgba(232, 222, 210, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 206, 227, 0.6);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(247, 243, 236, 0.9);
+  border-color: rgba(101, 71, 127, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(75, 46, 99, 0.12);
+}
+
+.glass-card-dark {
+  background: rgba(40, 33, 38, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(182, 154, 104, 0.25);
+  color: #F7F3EC;
+}
+
+/* Luxury Glow Radiance */
+.glow-purple {
+  box-shadow: 0 0 35px -5px rgba(101, 71, 127, 0.25);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px -5px rgba(182, 154, 104, 0.3);
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #4B2E63 0%, #65477F 50%, #B69A68 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #282126 0%, #65477F 60%, #B69A68 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle background grid pattern */
+.bg-grid-subtle {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(184, 166, 201, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(184, 166, 201, 0.12) 1px, transparent 1px);
+}
+
+.bg-radial-aura {
+  background: radial-gradient(circle at 50% 30%, rgba(217, 206, 227, 0.45) 0%, rgba(247, 243, 236, 0) 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #B8A6C9;
+  border-radius: 9999px;
+  border: 2px solid #F7F3EC;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #65477F;
+}
+
+/* Interactive Cursor follower styling */
+.cursor-blob {
+  pointer-events: none;
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 1;
+  transition: transform 0.15s ease-out, width 0.2s, height 0.2s, opacity 0.2s;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-slow {
+  animation: float 7s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out infinite 3s;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
