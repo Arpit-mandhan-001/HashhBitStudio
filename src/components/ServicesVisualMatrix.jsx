@@ -12,6 +12,7 @@ import {
   ArrowUpRight,
   CheckCircle,
 } from "lucide-react";
+
 import Image from "next/image";
 
 export default function ServicesVisualMatrix({ className = "" }) {
@@ -29,7 +30,6 @@ export default function ServicesVisualMatrix({ className = "" }) {
       name: "Web Solutions",
       category: "Engineering",
       icon: Code2,
-
       image: "/images/service_1.jpg",
 
       tagline:
@@ -54,7 +54,6 @@ export default function ServicesVisualMatrix({ className = "" }) {
       name: "Digital Marketing",
       category: "Growth",
       icon: TrendingUp,
-
       image: "/images/service_2.jpg",
 
       tagline:
@@ -79,7 +78,6 @@ export default function ServicesVisualMatrix({ className = "" }) {
       name: "Brand & Motion",
       category: "Creative",
       icon: Palette,
-
       image: "/images/service_3.jpg",
 
       tagline:
@@ -104,7 +102,6 @@ export default function ServicesVisualMatrix({ className = "" }) {
       name: "AI & Automation",
       category: "Intelligence",
       icon: Bot,
-
       image: "/images/service_4.jpg",
 
       tagline:
@@ -151,12 +148,14 @@ export default function ServicesVisualMatrix({ className = "" }) {
       >
         <div className="sticky top-0 h-screen overflow-hidden">
           <div className="grid h-full grid-cols-2">
+
             {/* ==================================================
                 LEFT INTRO
             ================================================== */}
 
             <div className="relative flex items-center bg-[#F7F3EC] px-8 xl:px-12 2xl:px-20">
               <div className="w-full max-w-3xl">
+
                 {/* Badge */}
 
                 <div className="inline-flex items-center gap-2 rounded-full border border-[#B8A6C9]/40 bg-[#E8DED2] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#4B2E63]">
@@ -168,10 +167,14 @@ export default function ServicesVisualMatrix({ className = "" }) {
 
                 <h2 className="mt-8 font-poppins text-5xl font-extrabold leading-[0.9] tracking-tight text-[#282126] sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px]">
                   Digital systems
+
                   <br />
-                  <span className="mt-5 block text-[#4B2E63]">
-                    built to move.
-                  </span>
+
+                  {/* =================================================
+                      CHARACTER BY CHARACTER ANIMATION
+                  ================================================= */}
+
+                  <AnimatedBuiltToMove />
                 </h2>
 
                 {/* Description */}
@@ -180,8 +183,8 @@ export default function ServicesVisualMatrix({ className = "" }) {
                   <div className="h-px w-12 shrink-0 bg-[#4B2E63]" />
 
                   <p className="max-w-lg text-sm leading-relaxed text-[#65477F] md:text-base">
-                    Scroll slowly through our capabilities. Each service becomes
-                    its own cinematic frame.
+                    Scroll slowly through our capabilities. Each service
+                    becomes its own cinematic frame.
                   </p>
                 </div>
 
@@ -201,6 +204,7 @@ export default function ServicesVisualMatrix({ className = "" }) {
                   >
                     ↓
                   </motion.div>
+
                   Scroll to explore
                 </div>
               </div>
@@ -210,7 +214,8 @@ export default function ServicesVisualMatrix({ className = "" }) {
                 RIGHT REEL
             ================================================== */}
 
-            <div className="relative h-full overflow-hidden translate-y-14">
+            <div className="relative h-[calc(100%-7.5rem)] translate-y-30 overflow-hidden rounded-4xl bg-transparent">
+
               {services.map((service, index) => (
                 <VerticalReelCard
                   key={service.number}
@@ -223,11 +228,10 @@ export default function ServicesVisualMatrix({ className = "" }) {
 
               {/* Progress dots */}
 
-              <div className="absolute right-5 top-1/2 z-[300] -translate-y-1/2 md:right-8 translate-x-2">
+              <div className="absolute right-5 top-1/2 z-[300] -translate-y-1/2 translate-x-2 md:right-8">
                 <div className="flex flex-col items-center gap-4">
                   {services.map((service, index) => {
                     const start = index / services.length;
-
                     const end = (index + 1) / services.length;
 
                     return (
@@ -236,7 +240,7 @@ export default function ServicesVisualMatrix({ className = "" }) {
                         progress={scrollYProgress}
                         start={start}
                         end={end}
-                        color="#111111"
+                        color="#FFFFFF"
                       />
                     );
                   })}
@@ -252,10 +256,12 @@ export default function ServicesVisualMatrix({ className = "" }) {
       ======================================================== */}
 
       <div className="lg:hidden">
+
         {/* Mobile intro */}
 
         <div className="flex items-center bg-[#F7F3EC] px-6 py-20">
           <div className="w-full">
+
             <div className="inline-flex items-center gap-2 rounded-full border border-[#B8A6C9]/40 bg-[#E8DED2] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#4B2E63]">
               <Sparkles className="h-3.5 w-3.5 text-[#B69A68]" />
               Interactive Services
@@ -263,16 +269,20 @@ export default function ServicesVisualMatrix({ className = "" }) {
 
             <h2 className="mt-8 font-poppins text-5xl font-extrabold leading-[0.9] tracking-tight text-[#282126] sm:text-6xl">
               Digital systems
+
               <br />
-              <span className="mt-5 block text-[#4B2E63]">built to move.</span>
+
+              {/* SAME ANIMATION ON MOBILE */}
+
+              <AnimatedBuiltToMove />
             </h2>
 
             <div className="mt-8 flex items-center gap-4">
               <div className="h-px w-10 shrink-0 bg-[#4B2E63]" />
 
               <p className="text-sm leading-relaxed text-[#65477F]">
-                Scroll slowly through our capabilities. Each service becomes its
-                own cinematic frame.
+                Scroll slowly through our capabilities. Each service becomes
+                its own cinematic frame.
               </p>
             </div>
 
@@ -290,6 +300,7 @@ export default function ServicesVisualMatrix({ className = "" }) {
               >
                 ↓
               </motion.div>
+
               Scroll to explore
             </div>
           </div>
@@ -299,34 +310,11 @@ export default function ServicesVisualMatrix({ className = "" }) {
 
         <div className="bg-[#282126]">
           {services.map((service) => (
-            <MobileServiceCard key={service.number} service={service} />
+            <MobileServiceCard
+              key={service.number}
+              service={service}
+            />
           ))}
-        </div>
-      </div>
-
-      {/* ========================================================
-          NEXT SECTION
-      ======================================================== */}
-
-      <div className="flex items-center justify-center bg-[#F7F3EC] px-6">
-        <div className="max-w-3xl text-center">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#65477F]">
-            The next step
-          </span>
-
-          <h3 className="mt-6 font-display text-5xl font-bold leading-[0.95] text-[#282126] md:text-7xl">
-            Let's build
-            <br />
-            <span className="text-[#4B2E63]">something different.</span>
-          </h3>
-
-          <a
-            href="#estimator"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#4B2E63] px-7 py-3.5 text-sm font-semibold text-[#F7F3EC] transition-all duration-300 hover:scale-105 hover:bg-[#65477F]"
-          >
-            Start a Project
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
         </div>
       </div>
     </section>
@@ -334,73 +322,231 @@ export default function ServicesVisualMatrix({ className = "" }) {
 }
 
 /* ================================================================
-   DESKTOP VERTICAL REEL CARD
-
-   Layout:
-
-          SERVICE NAME
-
-        ┌─────────────┐
-        │             │
-        │    IMAGE    │
-        │             │
-        └─────────────┘
-
-        DESCRIPTION
-        TAGLINE
+   ANIMATED "BUILT TO MOVE"
 ================================================================ */
 
-function VerticalReelCard({ service, index, total, progress }) {
+function AnimatedBuiltToMove() {
+  const text = "built to move.";
+
+  return (
+    <motion.span
+      className="mt-5 block text-[#4B2E63]"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.08,
+            delayChildren: 0.25,
+          },
+        },
+      }}
+    >
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={`${char}-${index}`}
+          className="inline-block transform-gpu"
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 35,
+              rotateX: -90,
+              scale: 0.8,
+              filter: "blur(8px)",
+            },
+
+            visible: {
+              opacity: [0, 1, 1, 0],
+              y: [35, 0, 0, -25],
+              rotateX: [-90, 0, 0, 90],
+              scale: [0.8, 1, 1, 0.9],
+              filter: [
+                "blur(8px)",
+                "blur(0px)",
+                "blur(0px)",
+                "blur(7px)",
+              ],
+
+              transition: {
+                duration: 3.8,
+                delay: index * 0.09,
+                repeat: Infinity,
+                repeatDelay: 1.2,
+                ease: [0.22, 1, 0.36, 1],
+              },
+            },
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+}
+
+/* ================================================================
+   DESKTOP VERTICAL REEL CARD
+================================================================ */
+
+function VerticalReelCard({
+  service,
+  index,
+  total,
+  progress,
+}) {
   const start = index / total;
   const end = (index + 1) / total;
 
-  const enterStart = index === 0 ? 0 : Math.max(0, start - 0.08);
+  const enterStart =
+    index === 0
+      ? 0
+      : Math.max(0, start - 0.08);
 
-  const enterEnd = Math.min(1, start + 0.08);
+  const enterEnd = Math.min(
+    1,
+    start + 0.08
+  );
 
-  const exitStart = Math.max(start, end - 0.08);
+  const exitStart = Math.max(
+    start,
+    end - 0.08
+  );
 
-  const exitEnd = Math.min(1, end + 0.08);
+  const exitEnd = Math.min(
+    1,
+    end + 0.08
+  );
 
-  const initialY = index === 0 ? "0%" : "100%";
+  const initialY =
+    index === 0
+      ? "0%"
+      : "100%";
 
   /* ============================================================
-     ANIMATION
+     CARD Y
   ============================================================ */
 
   const y = useTransform(
     progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [initialY, "0%", "0%", "-15%", "-100%"],
+    [
+      enterStart,
+      enterEnd,
+      exitStart,
+      end,
+      exitEnd,
+    ],
+    [
+      initialY,
+      "0%",
+      "0%",
+      "-15%",
+      "-100%",
+    ]
   );
+
+  /* ============================================================
+     SCALE
+  ============================================================ */
 
   const scale = useTransform(
     progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [index === 0 ? 1 : 0.9, 1, 1, 0.97, 0.9],
+    [
+      enterStart,
+      enterEnd,
+      exitStart,
+      end,
+      exitEnd,
+    ],
+    [
+      index === 0 ? 1 : 0.9,
+      1,
+      1,
+      0.97,
+      0.9,
+    ]
   );
+
+  /* ============================================================
+     ROTATION
+  ============================================================ */
 
   const rotateX = useTransform(
     progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [index === 0 ? 0 : 5, 0, 0, -2, -5],
+    [
+      enterStart,
+      enterEnd,
+      exitStart,
+      end,
+      exitEnd,
+    ],
+    [
+      index === 0 ? 0 : 5,
+      0,
+      0,
+      -2,
+      -5,
+    ]
   );
+
+  /* ============================================================
+     OPACITY
+  ============================================================ */
 
   const opacity = useTransform(
     progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [index === 0 ? 1 : 0, 1, 1, 0.85, 0],
+    [
+      enterStart,
+      enterEnd,
+      exitStart,
+      end,
+      exitEnd,
+    ],
+    [
+      index === 0 ? 1 : 0,
+      1,
+      1,
+      0.85,
+      0,
+    ]
   );
+
+  /* ============================================================
+     BLUR
+  ============================================================ */
 
   const blur = useTransform(
     progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [index === 0 ? "0px" : "8px", "0px", "0px", "1px", "8px"],
+    [
+      enterStart,
+      enterEnd,
+      exitStart,
+      end,
+      exitEnd,
+    ],
+    [
+      index === 0 ? "0px" : "8px",
+      "0px",
+      "0px",
+      "1px",
+      "8px",
+    ]
   );
 
-  const filter = useTransform(blur, (value) => `blur(${value})`);
+  const filter = useTransform(
+    blur,
+    (value) => `blur(${value})`
+  );
 
-  const cardProgress = useTransform(progress, [start, end], ["0%", "100%"]);
+  /* ============================================================
+     CARD PROGRESS
+  ============================================================ */
+
+  const cardProgress = useTransform(
+    progress,
+    [start, end],
+    ["0%", "100%"]
+  );
 
   return (
     <motion.div
@@ -413,13 +559,15 @@ function VerticalReelCard({ service, index, total, progress }) {
         zIndex: total - index,
         transformPerspective: 1200,
       }}
-      className="absolute inset-0 flex items-center justify-center px-5 xl:px-8 2xl:px-10"
+      className="absolute inset-0 flex items-center justify-center"
     >
+
       {/* ========================================================
           CARD
       ======================================================== */}
 
-      <div className="relative h-[min(82vh,760px)] w-full max-w-[850px]">
+      <div className="relative h-[min(82vh,760px)] w-full">
+
         {/* Shadow */}
 
         <div
@@ -435,13 +583,11 @@ function VerticalReelCard({ service, index, total, progress }) {
           className="relative h-full w-full overflow-hidden rounded-[2rem] border shadow-[0_30px_100px_rgba(40,33,38,0.35)]"
           style={{
             backgroundColor: service.color,
-
             borderColor: `${service.accent}45`,
           }}
         >
-          {/* ====================================================
-              DECORATIVE ELEMENTS
-          ==================================================== */}
+
+          {/* Decorative circle */}
 
           <div
             className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full border"
@@ -450,6 +596,8 @@ function VerticalReelCard({ service, index, total, progress }) {
             }}
           />
 
+          {/* Decorative circle */}
+
           <div
             className="pointer-events-none absolute -bottom-60 -right-20 h-[600px] w-[600px] rounded-full border"
             style={{
@@ -457,11 +605,12 @@ function VerticalReelCard({ service, index, total, progress }) {
             }}
           />
 
+          {/* Glow */}
+
           <div
             className="pointer-events-none absolute right-[15%] top-[20%] h-40 w-40 rounded-full blur-[80px]"
             style={{
               backgroundColor: service.accent,
-
               opacity: 0.22,
             }}
           />
@@ -483,40 +632,35 @@ function VerticalReelCard({ service, index, total, progress }) {
                     transparent 1px
                   )
                 `,
-
                 backgroundSize: "60px 60px",
               }}
             />
           </div>
 
           {/* ====================================================
-              MAIN VERTICAL CONTENT
+              MAIN CONTENT
           ==================================================== */}
 
           <div className="relative z-10 flex h-full flex-col p-6 sm:p-8 md:p-9 xl:p-10">
-            {/* ==================================================
-                SERVICE HEADING
-            ================================================== */}
 
-            <div className="flex shrink-0 flex-col items-center text-center relative -top-5">
-              {/* Main service heading */}
+            {/* Service heading */}
+
+            <div className="relative -top-5 flex shrink-0 flex-col items-center text-center">
 
               <h3
                 className="
                   whitespace-nowrap
                   font-display
+                  font-poppins
                   text-[clamp(2rem,4vw,4rem)]
                   font-extrabold
                   leading-none
                   tracking-tight
                   text-[#F7F3EC]
-                  font-poppins
                 "
               >
                 {service.name}
               </h3>
-
-              {/* Accent line */}
 
               <div
                 className="mt-5 h-1 w-56 rounded-full"
@@ -526,18 +670,16 @@ function VerticalReelCard({ service, index, total, progress }) {
               />
             </div>
 
-            {/* ==================================================
-                IMAGE
-            ================================================== */}
+            {/* Image */}
 
-            <div className="relative mt-6 min-h-0 flex-1 -top-5">
+            <div className="relative -top-5 mt-6 min-h-0 flex-1">
+
               <div
                 className="relative h-full w-full overflow-hidden rounded-[1.5rem] border"
                 style={{
                   borderColor: `${service.accent}35`,
                 }}
               >
-                {/* Image */}
 
                 <Image
                   src={service.image}
@@ -564,29 +706,48 @@ function VerticalReelCard({ service, index, total, progress }) {
                   }}
                 />
 
-                {/* Image label */}
+                {/* Category */}
 
                 <div className="absolute left-4 right-4 top-4 flex items-center justify-between sm:left-5 sm:right-5 sm:top-5">
+
                   <span
-                    className="group rounded-full border px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.2em] backdrop-blur-md
-      transition-all duration-300 ease-out
-      hover:-translate-y-0.5
-      hover:scale-105
-      hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]
-      sm:text-[9px]"
+                    className="
+                      group
+                      rounded-full
+                      border
+                      px-3
+                      py-1.5
+                      text-[8px]
+                      font-bold
+                      uppercase
+                      tracking-[0.2em]
+                      backdrop-blur-md
+                      transition-all
+                      duration-300
+                      ease-out
+                      hover:-translate-y-0.5
+                      hover:scale-105
+                      hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]
+                      sm:text-[9px]
+                    "
                     style={{
                       color: service.accent,
                       backgroundColor: `${service.color}90`,
                       borderColor: `${service.accent}35`,
-                      boxShadow: `0 0 0 rgba(0,0,0,0)`,
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.boxShadow = `0 0 18px ${service.accent}55`;
-                      e.currentTarget.style.borderColor = `${service.accent}80`;
+                      e.currentTarget.style.boxShadow =
+                        `0 0 18px ${service.accent}55`;
+
+                      e.currentTarget.style.borderColor =
+                        `${service.accent}80`;
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.boxShadow = `0 0 0 rgba(0,0,0,0)`;
-                      e.currentTarget.style.borderColor = `${service.accent}35`;
+                      e.currentTarget.style.boxShadow =
+                        `0 0 0 rgba(0,0,0,0)`;
+
+                      e.currentTarget.style.borderColor =
+                        `${service.accent}35`;
                     }}
                   >
                     {service.category}
@@ -595,15 +756,12 @@ function VerticalReelCard({ service, index, total, progress }) {
               </div>
             </div>
 
-            {/* ==================================================
-                DESCRIPTION BELOW IMAGE
-            ================================================== */}
+            {/* Description */}
 
-            <div className="mt-5 shrink-0 relative -top-5">
-              {/* Tagline */}
+            <div className="relative -top-5 mt-5 shrink-0">
 
               <p
-                className="text-center text-sm font-medium leading-relaxed sm:text-[15px] font-poppins"
+                className="text-center font-poppins text-sm font-medium leading-relaxed sm:text-[15px]"
                 style={{
                   color: service.accent,
                 }}
@@ -614,102 +772,160 @@ function VerticalReelCard({ service, index, total, progress }) {
               {/* Features */}
 
               <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2">
-                {service.features.slice(0, 3).map((feature) => (
-                  <div key={feature} className="flex items-center gap-2">
-                    <span
-                      className="h-1.5 w-1.5 shrink-0 rounded-full"
-                      style={{
-                        backgroundColor: service.accent,
-                      }}
-                    />
 
-                    <span className="text-[12px] text-white/45 font-raleway font-bold">
-                      {feature}
-                    </span>
-                  </div>
-                ))}
+                {service.features
+                  .slice(0, 3)
+                  .map((feature) => (
+                    <div
+                      key={feature}
+                      className="flex items-center gap-2"
+                    >
+                      <span
+                        className="h-1.5 w-1.5 shrink-0 rounded-full"
+                        style={{
+                          backgroundColor:
+                            service.accent,
+                        }}
+                      />
+
+                      <span className="font-raleway text-[12px] font-bold text-white/45">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
               </div>
             </div>
-            <a
-              href={`#${service.name.toLowerCase().replace(/\s+/g, "-")}`}
-              className="
-    group absolute bottom-3 right-3
-    inline-flex items-center gap-2
-    overflow-hidden
-    rounded-full
-    border border-[#D6B77A]/40
-    bg-[#F7F3EC]/95
-    px-6 py-3
-    font-poppins text-xs font-semibold
-    text-[#282126]
-    shadow-[0_8px_30px_rgba(0,0,0,0.18)]
-    backdrop-blur-xl
-    transition-all duration-500 ease-out
 
-    hover:-translate-y-1
-    hover:scale-[1.03]
-    hover:border-[#D6B77A]/80
-    hover:bg-[#FFF9EC]
-    hover:text-[#6F5630]
-    hover:shadow-[0_12px_35px_rgba(214,183,122,0.25)]
-  "
+            {/* ==================================================
+                EXPLORE BUTTON
+            ================================================== */}
+
+            <a
+              href={`#${service.name
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
+              className="
+                group
+                absolute
+                bottom-3
+                right-3
+                inline-flex
+                items-center
+                gap-2
+                overflow-hidden
+                rounded-full
+                border
+                border-[#D6B77A]/40
+                bg-[#F7F3EC]/95
+                px-6
+                py-3
+                font-poppins
+                text-xs
+                font-semibold
+                text-[#282126]
+                shadow-[0_8px_30px_rgba(0,0,0,0.18)]
+                backdrop-blur-xl
+                transition-all
+                duration-500
+                ease-out
+                hover:-translate-y-1
+                hover:scale-[1.03]
+                hover:border-[#D6B77A]/80
+                hover:bg-[#FFF9EC]
+                hover:text-[#6F5630]
+                hover:shadow-[0_12px_35px_rgba(214,183,122,0.25)]
+              "
             >
+
               {/* Premium shine */}
 
               <span
                 className="
-      pointer-events-none absolute
-      -left-[120%] top-0
-      h-full w-[70%]
-      rotate-[18deg]
-      bg-gradient-to-r
-      from-transparent
-      via-white/70
-      to-transparent
-      opacity-0
-      transition-all duration-700
-      group-hover:left-[130%]
-      group-hover:opacity-100
-    "
+                  pointer-events-none
+                  absolute
+                  -left-[120%]
+                  top-0
+                  h-full
+                  w-[70%]
+                  rotate-[18deg]
+                  bg-gradient-to-r
+                  from-transparent
+                  via-white/70
+                  to-transparent
+                  opacity-0
+                  transition-all
+                  duration-700
+                  group-hover:left-[130%]
+                  group-hover:opacity-100
+                "
               />
 
               {/* Gold glow */}
 
               <span
                 className="
-      pointer-events-none absolute inset-0
-      rounded-full
-      opacity-0
-      shadow-[inset_0_0_20px_rgba(214,183,122,0.18)]
-      transition-opacity duration-500
-      group-hover:opacity-100
-    "
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  rounded-full
+                  opacity-0
+                  shadow-[inset_0_0_20px_rgba(214,183,122,0.18)]
+                  transition-opacity
+                  duration-500
+                  group-hover:opacity-100
+                "
               />
 
-              <span className="relative z-10">Explore</span>
+              {/* Character animation */}
+
+              <span className="relative z-10 inline-flex">
+
+                {"Explore".split("").map(
+                  (char, index) => (
+                    <span
+                      key={index}
+                      className="
+                        text-[#6D28D9]
+                        inline-block
+                        transform-gpu
+                        transition-transform
+                        duration-700
+                        ease-[cubic-bezier(0.22,1,0.36,1)]
+                        group-hover:rotate-[360deg]
+                      "
+                      style={{
+                        transitionDelay:
+                          `${index * 50}ms`,
+                      }}
+                    >
+                      {char}
+                    </span>
+                  )
+                )}
+
+              </span>
 
               <ArrowUpRight
                 className="
-      relative z-10
-      h-4 w-4
-      transition-all duration-500 ease-out
-      group-hover:translate-x-0.5
-      group-hover:-translate-y-0.5
-      group-hover:rotate-6
-    "
+                  relative
+                  z-10
+                  h-4
+                  w-4
+                  transition-all
+                  duration-500
+                  group-hover:translate-x-1
+                  group-hover:-translate-y-1
+                "
               />
             </a>
           </div>
 
-          {/* ====================================================
-              CARD PROGRESS
-          ==================================================== */}
+          {/* Card progress */}
 
           <motion.div
             className="absolute bottom-0 left-0 h-[3px]"
             style={{
               backgroundColor: service.accent,
-
               width: cardProgress,
             }}
           />
@@ -723,17 +939,30 @@ function VerticalReelCard({ service, index, total, progress }) {
    PROGRESS DOT
 ================================================================ */
 
-function ReelProgress({ progress, start, end, color }) {
+function ReelProgress({
+  progress,
+  start,
+  end,
+  color,
+}) {
   const scale = useTransform(
     progress,
-    [start, (start + end) / 2, end],
-    [1, 1.8, 1],
+    [
+      start,
+      (start + end) / 2,
+      end,
+    ],
+    [1, 1.8, 1]
   );
 
   const opacity = useTransform(
     progress,
-    [start, (start + end) / 2, end],
-    [0.35, 1, 0.35],
+    [
+      start,
+      (start + end) / 2,
+      end,
+    ],
+    [0.35, 1, 0.35]
   );
 
   return (
@@ -742,7 +971,6 @@ function ReelProgress({ progress, start, end, color }) {
         scale,
         opacity,
         backgroundColor: color,
-
         boxShadow: `0 0 12px ${color}`,
       }}
       className="h-2.5 w-2.5 rounded-full"
@@ -764,12 +992,14 @@ function MobileServiceCard({ service }) {
         backgroundColor: service.color,
       }}
     >
+
       <div
         className="relative min-h-[calc(100vh-2.5rem)] overflow-hidden rounded-[2rem] border"
         style={{
           borderColor: `${service.accent}45`,
         }}
       >
+
         {/* Background circle */}
 
         <div
@@ -785,7 +1015,6 @@ function MobileServiceCard({ service }) {
           className="pointer-events-none absolute right-[10%] top-[25%] h-40 w-40 rounded-full blur-[80px]"
           style={{
             backgroundColor: service.accent,
-
             opacity: 0.2,
           }}
         />
@@ -807,7 +1036,6 @@ function MobileServiceCard({ service }) {
                   transparent 1px
                 )
               `,
-
               backgroundSize: "60px 60px",
             }}
           />
@@ -816,17 +1044,20 @@ function MobileServiceCard({ service }) {
         {/* Content */}
 
         <div className="relative flex min-h-[calc(100vh-2.5rem)] flex-col p-6 sm:p-8">
+
           {/* Header */}
 
           <div className="flex items-start justify-between gap-4">
+
             <div className="flex items-center gap-3">
+
               <div
                 className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border"
                 style={{
-                  backgroundColor: `${service.accent}15`,
-
-                  borderColor: `${service.accent}35`,
-
+                  backgroundColor:
+                    `${service.accent}15`,
+                  borderColor:
+                    `${service.accent}35`,
                   color: service.accent,
                 }}
               >
@@ -834,6 +1065,7 @@ function MobileServiceCard({ service }) {
               </div>
 
               <div>
+
                 <p
                   className="font-mono text-[9px] uppercase tracking-[0.3em]"
                   style={{
@@ -853,7 +1085,6 @@ function MobileServiceCard({ service }) {
               className="text-6xl font-bold leading-none"
               style={{
                 color: service.accent,
-
                 opacity: 0.13,
               }}
             >
@@ -866,13 +1097,16 @@ function MobileServiceCard({ service }) {
           ================================================== */}
 
           <div className="flex-1 py-10">
+
             {/* Main heading */}
 
             <div className="text-center">
+
               <div
                 className="mx-auto mb-5 h-1 w-12 rounded-full"
                 style={{
-                  backgroundColor: service.accent,
+                  backgroundColor:
+                    service.accent,
                 }}
               />
 
@@ -894,6 +1128,7 @@ function MobileServiceCard({ service }) {
             {/* Image */}
 
             <div className="relative mt-8 h-64 overflow-hidden rounded-3xl border sm:h-80">
+
               <Image
                 src={service.image}
                 alt={service.name}
@@ -919,6 +1154,7 @@ function MobileServiceCard({ service }) {
             {/* Description */}
 
             <div className="mt-7 text-center">
+
               <p
                 className="text-sm leading-relaxed"
                 style={{
@@ -938,11 +1174,13 @@ function MobileServiceCard({ service }) {
             <div
               className="mt-8 rounded-3xl border p-5"
               style={{
-                backgroundColor: `${service.accent}10`,
-
-                borderColor: `${service.accent}30`,
+                backgroundColor:
+                  `${service.accent}10`,
+                borderColor:
+                  `${service.accent}30`,
               }}
             >
+
               <div
                 className="mb-5 font-mono text-[9px] uppercase tracking-[0.25em]"
                 style={{
@@ -953,18 +1191,28 @@ function MobileServiceCard({ service }) {
               </div>
 
               <div className="space-y-4">
-                {service.features.map((feature) => (
-                  <div key={feature} className="flex items-start gap-3">
-                    <CheckCircle
-                      className="mt-0.5 h-4 w-4 shrink-0"
-                      style={{
-                        color: service.accent,
-                      }}
-                    />
 
-                    <span className="text-sm text-[#F7F3EC]/80">{feature}</span>
-                  </div>
-                ))}
+                {service.features.map(
+                  (feature) => (
+                    <div
+                      key={feature}
+                      className="flex items-start gap-3"
+                    >
+
+                      <CheckCircle
+                        className="mt-0.5 h-4 w-4 shrink-0"
+                        style={{
+                          color:
+                            service.accent,
+                        }}
+                      />
+
+                      <span className="text-sm text-[#F7F3EC]/80">
+                        {feature}
+                      </span>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -972,11 +1220,14 @@ function MobileServiceCard({ service }) {
           {/* Footer */}
 
           <div>
+
             <div className="mb-3 flex items-center gap-3">
+
               <span
                 className="h-2 w-2 rounded-full"
                 style={{
-                  backgroundColor: service.accent,
+                  backgroundColor:
+                    service.accent,
                 }}
               />
 
@@ -995,6 +1246,7 @@ function MobileServiceCard({ service }) {
               className="inline-flex items-center gap-2 rounded-full bg-[#F7F3EC] px-6 py-3 text-xs font-bold text-[#282126]"
             >
               Explore
+
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>

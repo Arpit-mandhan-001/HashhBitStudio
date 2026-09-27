@@ -5,10 +5,12 @@ import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServicesVisualMatrix from "@/components/ServicesVisualMatrix";
-import InteractiveWorkShowcase from "@/components/InteractiveWorkShowcase";
+import InteractiveWorkShowcase from "@/components/WhyChooseUs";
 import TechStackVisualizer from "@/components/TechStackVisualizer";
 import InteractiveProjectEstimator from "@/components/InteractiveProjectEstimator";
 import Footer from "@/components/Footer";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import Blogs from "@/components/Blogs";
 
 export default function Home() {
   return (
@@ -25,19 +27,21 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Interactive Core Services Showcase (Web Solutions, Marketing, AI, Brand) */}
+      {/* {Service} */}
       <ServicesVisualMatrix />
 
       {/* Visual Work Reel & Proof of Scale */}
-      <InteractiveWorkShowcase />
+      <WhyChooseUs />
 
       {/* Modern Tech Stack & Modular Architecture Visualizer */}
-      <TechStackVisualizer />
+      {/* <TechStackVisualizer /> */}
 
       {/* Interactive Scope & Project Configurator */}
-      <InteractiveProjectEstimator />
+      {/* <InteractiveProjectEstimator /> */}
 
       {/* Luxury Footer with Active Palette Matrix */}
+
+      <Blogs />
       <Footer />
     </main>
   );

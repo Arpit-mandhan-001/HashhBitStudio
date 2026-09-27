@@ -110,7 +110,7 @@ export default function HeroSection() {
             >
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#315BEA]" />
 
-              <span className="text-[10px] sm:text-xs md:text-sm font-bingo-italic uppercase tracking-[0.15em] sm:tracking-[0.25em] md:tracking-[0.35em] text-[#65477F]">
+              <span className="text-[10px] sm:text-xs md:text-sm font-raleway font-semibold  uppercase tracking-[0.15em] text-[#65477F]">
                 Technology • Creativity • Growth
               </span>
 
@@ -137,7 +137,7 @@ export default function HeroSection() {
                   duration: 0.7,
                   delay: 0.1,
                 }}
-                className="block text-[48px] xs:text-[56px] sm:text-[64px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-semibold"
+                className="block text-[48px] xs:text-[56px] sm:text-[64px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-bold font-bingo-italic tracking-wide bg-gradient-to-b via-[#C084FC] via-[#8B5CF6] via-[55%] to-[#4C1D95] bg-clip-text text-transparent"
               >
                 WE BUILD
               </motion.span>
@@ -146,7 +146,7 @@ export default function HeroSection() {
                 ANIMATED SERVICE TYPOGRAPHY
             ================================================== */}
 
-              <div className="relative mt-2 sm:mt-1 h-[clamp(4rem,18vw,10rem)] flex items-center justify-center overflow-visible font-poppins w-full">
+              <div className="relative mt-2 sm:mt-1 h-[clamp(4rem,18vw,10rem)] flex items-center justify-center overflow-visible tracking-widest w-full font-bingo-regular ">
                 {/* ---------------------------------------------
                   GHOST / TRAILING TEXT
               ---------------------------------------------- */}
@@ -168,7 +168,7 @@ export default function HeroSection() {
                       duration: 1,
                       ease: "easeOut",
                     }}
-                    className="absolute font-display font-black text-[30px] xs:text-[36px] sm:text-[46px] md:text-[60px] lg:text-[70px] xl:text-[78px] text-[#4B2E63] whitespace-nowrap pointer-events-none select-none"
+                    className="absolute font-display font-black text-[30px] xs:text-[36px] sm:text-[46px] md:text-[60px] lg:text-[70px] xl:text-[78px] text-[#4B2E63] whitespace-nowrap pointer-events-none select-none -mt-8"
                   >
                     {heroWords[activeWord]}
                   </motion.span>
@@ -200,10 +200,10 @@ export default function HeroSection() {
                       filter: "blur(12px)",
                     }}
                     transition={{
-                      duration: 0.7,
+                      duration: 1.0,
                       ease: [0.76, 0, 0.24, 1],
                     }}
-                    className="relative z-10 font-display font-black text-[30px] xs:text-[36px] sm:text-[46px] md:text-[60px] lg:text-[70px] xl:text-[78px] text-[#181719] whitespace-nowrap select-none"
+                    className="relative z-10 font-display font-black text-[30px] xs:text-[36px] sm:text-[46px] md:text-[60px] lg:text-[70px] xl:text-[78px] text-[#181719] whitespace-nowrap select-none -mt-8"
                   >
                     {heroWords[activeWord]}
                   </motion.span>
@@ -228,7 +228,7 @@ export default function HeroSection() {
                 duration: 0.7,
                 delay: 0.5,
               }}
-              className="mt-6 sm:mt-7 font-poppins text-xs sm:text-sm md:text-base lg:text-lg text-[#65477F] max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
+              className="mt-6 sm:mt-2 font-poppins text-xs sm:text-sm md:text-base lg:text-lg text-[#65477F] max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
             >
               Digital experiences engineered for ambitious brands.
               <br className="hidden sm:block" />
@@ -253,7 +253,7 @@ export default function HeroSection() {
               duration: 0.7,
               delay: 0.65,
             }}
-            className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-15 w-full"
+            className="flex flex-wrap items-center justify-center gap-3 mt-5 sm:mt-5 sm:gap-4 mb-20 sm:mb-10 w-full"
           >
             {/* Primary Button */}
 

@@ -39,7 +39,8 @@ function MarqueeContent() {
           <span
             className="
               shrink-0
-              pr-5
+              pr-8
+              pl-8
               text-[34px]
               font-bold
               text-white
