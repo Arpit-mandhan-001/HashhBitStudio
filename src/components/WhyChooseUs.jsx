@@ -83,7 +83,7 @@ export function WhyChooseUs() {
           <div className="flex items-center gap-3 mb-5">
             <Asterisk className="h-5 w-5 text-gold" strokeWidth={2} />
 
-            <span className="font-mono text-sm tracking-wide text-lavender">
+            <span className="font-raleway font-semibold text-sm tracking-wide text-lavender">
               03. Why Choose Us?
             </span>
 
@@ -95,6 +95,7 @@ export function WhyChooseUs() {
               mt-1 inline-block whitespace-nowrap
               text-[clamp(2rem,5vw,4rem)]
               font-semibold
+              font-poppins
               leading-[0.95]
               tracking-[-0.04em]
               bg-gradient-to-r

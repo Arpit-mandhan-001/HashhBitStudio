@@ -353,6 +353,8 @@ export function FeatureCard({
             font-semibold
             leading-tight
             text-ivory
+            font-bingo-italic
+            tracking-[0.027em]
           "
         >
           {title}
@@ -373,6 +375,8 @@ export function FeatureCard({
 
             group-hover:text-beige/85
             group-focus-visible:text-beige/85
+            font-raleway
+            font-semibold
           "
         >
           {description}

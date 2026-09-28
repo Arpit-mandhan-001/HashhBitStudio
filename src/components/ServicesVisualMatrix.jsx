@@ -165,7 +165,7 @@ export default function ServicesVisualMatrix({ className = "" }) {
 
                 {/* Main heading */}
 
-                <h2 className="mt-8 font-poppins text-5xl font-extrabold leading-[0.9] tracking-tight text-[#282126] sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px]">
+                <h2 className="mt-8 font-bingo-regular tracking-wider text-5xl font-extrabold leading-[0.9] text-[#282126] sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px]">
                   Digital systems
 
                   <br />

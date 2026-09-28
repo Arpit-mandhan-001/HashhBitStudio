@@ -54,7 +54,7 @@ function ArrowIcon() {
 
 const Blogs = () => {
   return (
-    <section className="relative overflow-hidden bg-[#fdfaf5] py-20 text-zinc-950 sm:py-20 lg:py-18 mb-10 bg-transparent">
+    <section className="relative overflow-hidden py-20 text-zinc-950 sm:py-20 lg:py-18 mb-10 bg-transparent">
 
       {/* Background glow */}
       <div
@@ -101,10 +101,11 @@ const Blogs = () => {
                 text-[30px]
                 font-semibold
                 leading-none
-                tracking-[-0.04em]
+                tracking-[0.04em]
                 text-zinc-950
                 sm:text-[38px]
                 lg:text-[42px]
+                font-bingo-regular
               "
             >
               BLOGS
@@ -185,7 +186,7 @@ const Blogs = () => {
                 "
               />
 
-              <span className="relative z-10">
+              <span className="relative z-10 font-raleway font-semibold">
                 Discover All
               </span>
 
@@ -435,7 +436,6 @@ const Blogs = () => {
                     text-[21px]
                     font-medium
                     leading-[1.2]
-                    tracking-[-0.025em]
                     text-zinc-950
                     transition-all
                     duration-500
@@ -443,6 +443,8 @@ const Blogs = () => {
                     sm:text-[22px]
                     lg:text-[23px]
                     group-hover:translate-x-1
+                    font-poppins 
+                    tracking-tight
                   "
                 >
                   {blog.title}

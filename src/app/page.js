@@ -11,6 +11,7 @@ import InteractiveProjectEstimator from "@/components/InteractiveProjectEstimato
 import Footer from "@/components/Footer";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Blogs from "@/components/Blogs";
+import CuriousMindHero from "@/components/CuriousMindHero";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
 
       {/* Visual Work Reel & Proof of Scale */}
       <WhyChooseUs />
+      <CuriousMindHero />
 
       {/* Modern Tech Stack & Modular Architecture Visualizer */}
       {/* <TechStackVisualizer /> */}

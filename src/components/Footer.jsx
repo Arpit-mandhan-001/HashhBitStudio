@@ -82,7 +82,7 @@ export default function Footer() {
           <div className="min-w-0">
 
             {/* Animated small text */}
-            <span className="group inline-flex">
+            <span className="group inline-flex font-raleway font-semibold">
               <RotateText
                 className="
                   mb-3
@@ -93,7 +93,7 @@ export default function Footer() {
                   text-white
                 "
               >
-                * Get in touch
+                Get in touch
               </RotateText>
             </span>
 
@@ -253,7 +253,7 @@ export default function Footer() {
 
             </div>
 
-            <span className="text-lg font-bold tracking-tight sm:text-xl">
+            <span className="text-lg font-raleway font-bold tracking-tight sm:text-xl">
               Hashhbit Studio
             </span>
 
@@ -262,7 +262,7 @@ export default function Footer() {
 
           {/* DESCRIPTION */}
 
-          <div className="group mt-8 max-w-[380px] text-sm leading-6 sm:text-base">
+          <div className="group mt-8 font-raleway fotn-semibold max-w-[380px] text-sm leading-6 sm:text-base">
               We place great emphasis on designers, artists,
               <br/>
             and brands.
@@ -346,7 +346,7 @@ export default function Footer() {
         <div className="min-w-0">
 
           {/* Heading */}
-          <div className="group inline-flex">
+          <div className="group inline-flex font-poppins font-semibold ">
               Company
           </div>
 
@@ -407,7 +407,7 @@ export default function Footer() {
         <div className="min-w-0">
 
           {/* Heading */}
-          <div className="group inline-flex">
+          <div className="group inline-flex font-poppins font-semibold">
               Useful Links
           </div>
 
@@ -468,7 +468,7 @@ export default function Footer() {
         <div className="min-w-0">
 
           {/* Heading */}
-          <div className="group inline-flex">
+          <div className="group inline-flex font-poppins font-semibold">
               Contact Us
           </div>
 
@@ -479,8 +479,8 @@ export default function Footer() {
 
             <div>
 
-              <div className="group inline-flex">
-                <RotateText>
+              <div className="group inline-flex font-poppins font-semibold">
+                <RotateText className="text-[#9299a6]">
                   Email Us
                 </RotateText>
               </div>
@@ -511,7 +511,7 @@ export default function Footer() {
 
             <div>
 
-              <div className="group inline-flex">
+              <div className="group inline-flex font-poppins font-semibold">
                 <RotateText className="text-[#9299a6]">
                   Call Us
                 </RotateText>
@@ -582,7 +582,7 @@ export default function Footer() {
         "
       >
 
-        <div className="group min-w-0">
+        <div className="group min-w-0  font-bingo-regular font-bold tracking-widest">
           <RotateText className="text-sm text-[#737b89]">
             Copyright © 2026 Hashhbit Studio. All rights reserved.
           </RotateText>
