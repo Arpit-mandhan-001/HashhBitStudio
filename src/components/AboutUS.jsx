@@ -126,20 +126,20 @@ export function AboutUs() {
           >
             <h2
               className="
-              whitespace-nowrap
-                bg-gradient-to-r
-                from-[#17113D]
-                via-[#6246E5]
-                to-[#B8A5FF]
-                bg-clip-text
-                font-sora
-                text-4xl
-                font-black
-                uppercase
-                leading-[1.05]
-                tracking-[-0.06em]
-                text-transparent
-                md:text-5xl
+              bg-gradient-to-r
+    from-[#17113D]
+    via-[#6246E5]
+    to-[#B8A5FF]
+    bg-clip-text
+    font-sora
+    text-3xl
+    font-black
+    uppercase
+    leading-[1.05]
+    tracking-[-0.06em]
+    text-transparent
+    sm:text-4xl
+    md:text-5xl
               "
             >
               Building the future

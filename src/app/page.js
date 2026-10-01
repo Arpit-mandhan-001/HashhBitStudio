@@ -60,27 +60,7 @@ export default function Home() {
       <Testimonials />
       <Blogs />
       <Footer />
-
-      <div className="w-full min-h-screen ">
-        <div className="flex items-center justify-center text-4xl font-bingo-italic">
-          abcdefghijklmnopqrstuvwxyz
-        </div>
-        <div className="flex items-center justify-center text-4xl font-bingo-regular">
-          abcdefghijklmnopqrstuvwxyz
-        </div>
-        <div className="flex items-center justify-center text-4xl font-raleway">
-          abcdefghijklmnopqrstuvwxyz
-        </div>
-        <div className="flex items-center justify-center text-4xl font-poppins">
-          abcdefghijklmnopqrstuvwxyz
-        </div>
-        <div className="flex items-center justify-center text-4xl font-sora ">
-          abcdefghijklmnopqrstuvwxyz
-        </div>
-        <div className="flex items-center justify-center text-4xl font-inter ">
-          abcdefghijklmnopqrstuvwxyz
-        </div>
-      </div>
+      
     </main>
   );
 }

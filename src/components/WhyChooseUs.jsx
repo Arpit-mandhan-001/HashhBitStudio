@@ -69,32 +69,30 @@ const columnTwoImages = [
 export function WhyChooseUs() {
   return (
     <section className="relative overflow-hidden bg-[#FAF8FF] px-6 py-24 text-ivory md:px-12 lg:px-20 -mt-10 ">
-      
-
       <div className="relative mx-auto max-w-7xl">
         <div className="relative max-w-2xl md:-left-10">
-          <div className="text-[#17113D] inline-flex items-center gap-2 rounded-full border border-[#B8A6C9]/40 bg-[#E8DED2] px-4 py-2 text-xs font-bold uppercase tracking-widest mb-5 -mt-5" >
+          <div className="text-[#17113D] inline-flex items-center gap-2 rounded-full border border-[#B8A6C9]/40 bg-[#E8DED2] px-4 py-2 text-xs font-bold uppercase tracking-widest mb-5 -mt-5">
             <Sparkles className="h-3.5 w-3.5 text-[#B69A68]" />
             Why Choose Us
           </div>
 
           <h2
             className="
-              mt-1 mb-5 inline-block whitespace-nowrap
-              text-[clamp(2rem,5vw,4rem)]
-              font-semibold
-              font-sora
-              leading-[0.95]
-              tracking-[-0.04em]
-              bg-gradient-to-r
-              from-[#17113D]
-              via-[#6246E5]
-              to-[#B8A5FF]
-              bg-clip-text
-              text-transparent
-              drop-shadow-[0_8px_30px_rgba(147,112,190,0.18)]
-              pb-3
-            "
+  mt-1 mb-5 inline-block whitespace-nowrap
+  text-[clamp(1.6rem,5vw,4rem)]
+  font-semibold
+  font-sora
+  leading-[0.95]
+  tracking-[-0.04em]
+  bg-gradient-to-r
+  from-[#17113D]
+  via-[#6246E5]
+  to-[#B8A5FF]
+  bg-clip-text
+  text-transparent
+  drop-shadow-[0_8px_30px_rgba(147,112,190,0.18)]
+  pb-3
+"
           >
             Turning Bold Ideas Into
             <br />
