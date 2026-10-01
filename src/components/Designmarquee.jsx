@@ -27,10 +27,10 @@ function MarqueeContent() {
               tracking-[-0.04em]
               text-white
               sm:px-7
-              sm:text-[52px]
+              sm:text-[32px]
               md:px-9
-              md:text-[68px]
-              lg:text-[82px]
+              md:text-[40px]
+              lg:text-[50px]
             "
           >
             {item}

@@ -30,12 +30,12 @@ export default function CuriousMindHero() {
         <div className="flex flex-col items-center">
           {/* Main Heading */}
           <h1 className="text-center text-[clamp(85px,13vw,185px)] font-bold leading-[0.78] tracking-[-0.075em]">
-            <span className="block text-[#24133D] font-bingo-italic tracking-wide">Curious</span>
+            <span className="block text-[#17113D] font-sora tracking-wide">Curious</span>
 
             <span
               className="
                 relative block
-                bg-gradient-to-r from-violet-600 via-purple-500 to-fuchsia-500
+                bg-gradient-to-r from-[#17113D] via-[#6246E5] to-[#B8A5FF]
                 bg-clip-text text-transparent font-bingo-regular tracking-wide -mt-5
               "
             >
@@ -47,7 +47,7 @@ export default function CuriousMindHero() {
           <a
             href="#project"
             className="
-              group relative mt-20 flex h-14 w-[260px]
+              group relative mt-20 pr-2 flex h-14 w-[260px]
               items-center overflow-hidden rounded-full
               border border-violet-300
               bg-white/60
@@ -67,7 +67,7 @@ export default function CuriousMindHero() {
                 absolute left-1 top-1/2
                 h-12 w-12 -translate-y-1/2
                 rounded-full
-                bg-gradient-to-br from-violet-500 to-purple-600
+                bg-gradient-to-br from-[#17113D] via-[#6246E5] to-[#B8A5FF]
                 shadow-[0_0_20px_rgba(139,92,246,0.3)]
                 transition-all duration-1500
                 ease-[cubic-bezier(.16,1,.3,1)]
@@ -81,11 +81,12 @@ export default function CuriousMindHero() {
             <span
               className="
                 relative z-10 ml-12
-                text-[13px] font-semibold
-                tracking-[0.12em] text-violet-950
+                text-[13px]
+                whitespace-nowrap
+                tracking-[0.12em] text-[#17113D]
                 transition-all duration-500
                 group-hover:-translate-x-3
-                font-raleway
+                font-inter
                 font-bold 
                 pl-1
               "
@@ -131,7 +132,7 @@ export default function CuriousMindHero() {
       </section>
 
       {/* Bottom Decorative Orb */}
-      <div
+      {/* <div
         className="
           pointer-events-none absolute -bottom-20 -right-16
           h-44 w-44 rounded-full
@@ -139,7 +140,7 @@ export default function CuriousMindHero() {
           opacity-35 blur-sm
           shadow-[0_0_100px_rgba(139,92,246,0.35)]
         "
-      />
+      /> */}
     </main>
   );
 }

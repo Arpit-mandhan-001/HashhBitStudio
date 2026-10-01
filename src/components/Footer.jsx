@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 /* =========================================================
@@ -7,11 +8,7 @@ import Link from "next/link";
    Each character rotates individually on parent hover.
 ========================================================= */
 
-const RotateText = ({
-  children,
-  className = "",
-  delay = 0,
-}) => {
+const RotateText = ({ children, className = "", delay = 0 }) => {
   const text = String(children);
 
   return (
@@ -70,17 +67,14 @@ const SocialIcon = ({ children, href = "#" }) => {
 export default function Footer() {
   return (
     <footer className="overflow-hidden bg-[#101010] text-white">
-
       {/* =====================================================
           TOP SECTION
       ===================================================== */}
 
       <div className="px-5 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-14 md:px-12 lg:px-24 lg:pb-10 lg:pt-10">
         <div className="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-between">
-
           {/* LEFT */}
           <div className="min-w-0">
-
             {/* Animated small text */}
             <span className="group inline-flex font-raleway font-semibold">
               <RotateText
@@ -91,6 +85,7 @@ export default function Footer() {
                   uppercase
                   tracking-[0.08em]
                   text-white
+                  font-inter
                 "
               >
                 Get in touch
@@ -98,10 +93,10 @@ export default function Footer() {
             </span>
 
             <h2
-  className="
-  font-bingo-italic
+              className="
+  font-sora
   pl-2
-  tracking-[0.015em]
+  tracking-[-0.05em]
     text-4xl
     font-light
     sm:text-6xl
@@ -115,12 +110,9 @@ export default function Footer() {
     bg-clip-text
     text-transparent
   "
->
-  LET’S CONNECT
-</h2>
-
-
-
+            >
+              LET’S CONNECT
+            </h2>
           </div>
 
           {/* CONTACT BUTTON */}
@@ -147,9 +139,7 @@ export default function Footer() {
               sm:px-7
             "
           >
-            <span>
-              Contact Us
-            </span>
+            <span>Contact Us</span>
 
             <span
               className="
@@ -172,17 +162,14 @@ export default function Footer() {
               ↗
             </span>
           </Link>
-
         </div>
       </div>
-
 
       {/* =====================================================
           DIVIDER
       ===================================================== */}
 
       <div className="mx-5 border-t border-white/20 sm:mx-10 md:mx-12 lg:mx-24" />
-
 
       {/* =====================================================
           FOOTER CONTENT
@@ -204,13 +191,11 @@ export default function Footer() {
           lg:py-10
         "
       >
-
         {/* ===================================================
             BRAND
         =================================================== */}
 
         <div className="min-w-0">
-
           {/* LOGO */}
           <Link
             href="/"
@@ -222,9 +207,8 @@ export default function Footer() {
               sm:gap-4
             "
           >
-
             {/* Logo */}
-            <div className="relative flex h-11 w-11 shrink-0 items-center justify-center sm:h-12 sm:w-12">
+            {/* <div className="relative flex h-11 w-11 shrink-0 items-center justify-center sm:h-12 sm:w-12">
 
               <div
                 className="
@@ -253,40 +237,37 @@ export default function Footer() {
 
             </div>
 
+            */}
+
+            <Image
+              src="/images/logo-(3).png"
+              alt="Description"
+              width={100}
+              height={0}
+              className="object-cover -mr-5"
+            />
             <span className="text-lg font-raleway font-bold tracking-tight sm:text-xl">
               Hashhbit Studio
-            </span>
-
+            </span> 
           </Link>
-
 
           {/* DESCRIPTION */}
 
           <div className="group mt-8 font-raleway fotn-semibold max-w-[380px] text-sm leading-6 sm:text-base">
-              We place great emphasis on designers, artists,
-              <br/>
+            We place great emphasis on designers, artists,
+            <br />
             and brands.
           </div>
-
 
           {/* =================================================
               SOCIALS
           ================================================= */}
 
           <div className="mt-8 flex flex-wrap gap-3 sm:mt-10 sm:gap-4">
-
             {/* YouTube */}
             <SocialIcon href="#">
-              <svg
-                width="19"
-                height="19"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M10 15L15 12L10 9V15Z"
-                  fill="currentColor"
-                />
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+                <path d="M10 15L15 12L10 9V15Z" fill="currentColor" />
 
                 <path
                   d="
@@ -310,50 +291,35 @@ export default function Footer() {
               </svg>
             </SocialIcon>
 
-
             {/* Instagram */}
             <SocialIcon href="#">
-              <span className="text-lg">
-                ◎
-              </span>
+              <span className="text-lg">◎</span>
             </SocialIcon>
-
 
             {/* LinkedIn */}
             <SocialIcon href="#">
-              <span className="text-lg font-semibold">
-                in
-              </span>
+              <span className="text-lg font-semibold">in</span>
             </SocialIcon>
-
 
             {/* Facebook */}
             <SocialIcon href="#">
-              <span className="text-lg font-semibold">
-                f
-              </span>
+              <span className="text-lg font-semibold">f</span>
             </SocialIcon>
-
           </div>
-
         </div>
-
 
         {/* ===================================================
             COMPANY
         =================================================== */}
 
         <div className="min-w-0">
-
           {/* Heading */}
           <div className="group inline-flex font-poppins font-semibold ">
-              Company
+            Company
           </div>
-
 
           {/* Links */}
           <nav className="mt-6 flex flex-col gap-5 sm:mt-7 sm:gap-6">
-
             <Link
               href="/"
               className="
@@ -362,11 +328,8 @@ export default function Footer() {
                 footer-link
               "
             >
-              <RotateText>
-                Home
-              </RotateText>
+              <RotateText>Home</RotateText>
             </Link>
-
 
             <Link
               href="/about"
@@ -376,11 +339,8 @@ export default function Footer() {
                 footer-link
               "
             >
-              <RotateText>
-                About Us
-              </RotateText>
+              <RotateText>About Us</RotateText>
             </Link>
-
 
             <Link
               href="/services"
@@ -390,31 +350,23 @@ export default function Footer() {
                 footer-link
               "
             >
-              <RotateText>
-                Our Services
-              </RotateText>
+              <RotateText>Our Services</RotateText>
             </Link>
-
           </nav>
-
         </div>
-
 
         {/* ===================================================
             USEFUL LINKS
         =================================================== */}
 
         <div className="min-w-0">
-
           {/* Heading */}
           <div className="group inline-flex font-poppins font-semibold">
-              Useful Links
+            Useful Links
           </div>
-
 
           {/* Links */}
           <nav className="mt-6 flex flex-col gap-5 sm:mt-7 sm:gap-6">
-
             <Link
               href="/portfolio"
               className="
@@ -423,11 +375,8 @@ export default function Footer() {
                 footer-link
               "
             >
-              <RotateText>
-                Portfolio
-              </RotateText>
+              <RotateText>Portfolio</RotateText>
             </Link>
-
 
             <Link
               href="/blog"
@@ -437,11 +386,8 @@ export default function Footer() {
                 footer-link
               "
             >
-              <RotateText>
-                Blog
-              </RotateText>
+              <RotateText>Blog</RotateText>
             </Link>
-
 
             <Link
               href="/contact"
@@ -451,40 +397,28 @@ export default function Footer() {
                 footer-link
               "
             >
-              <RotateText>
-                Contact Us
-              </RotateText>
+              <RotateText>Contact Us</RotateText>
             </Link>
-
           </nav>
-
         </div>
-
 
         {/* ===================================================
             CONTACT
         =================================================== */}
 
         <div className="min-w-0">
-
           {/* Heading */}
           <div className="group inline-flex font-poppins font-semibold">
-              Contact Us
+            Contact Us
           </div>
 
-
           <div className="mt-6 flex flex-col gap-6 sm:mt-7 sm:gap-7">
-
             {/* EMAIL */}
 
             <div>
-
               <div className="group inline-flex font-poppins font-semibold">
-                <RotateText className="text-[#9299a6]">
-                  Email Us
-                </RotateText>
+                <RotateText className="text-[#9299a6]">Email Us</RotateText>
               </div>
-
 
               <a
                 href="mailto:monkartlabs@gmail.com"
@@ -501,25 +435,18 @@ export default function Footer() {
                   hover:text-[#aaa]
                 "
               >
-                  hashhbit@gmail.com
+                hashhbit@gmail.com
               </a>
-
             </div>
-
 
             {/* PHONE */}
 
             <div>
-
               <div className="group inline-flex font-poppins font-semibold">
-                <RotateText className="text-[#9299a6]">
-                  Call Us
-                </RotateText>
+                <RotateText className="text-[#9299a6]">Call Us</RotateText>
               </div>
 
-
               <div className="mt-3 flex flex-col gap-3">
-
                 <a
                   href="tel:+919625995855"
                   className="
@@ -528,9 +455,8 @@ export default function Footer() {
                     footer-link
                   "
                 >
-                    🇮🇳 +91 9999999999
+                  🇮🇳 +91 9999999999
                 </a>
-
 
                 <a
                   href="tel:+14034023414"
@@ -540,26 +466,19 @@ export default function Footer() {
                     footer-link
                   "
                 >
-                    🇨🇦 +1 (403) 404-4053
+                  🇨🇦 +1 (403) 404-4053
                 </a>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
 
       {/* =====================================================
           BOTTOM DIVIDER
       ===================================================== */}
 
       <div className="mx-5 border-t border-white/10 sm:mx-10 md:mx-12 lg:mx-24" />
-
 
       {/* =====================================================
           COPYRIGHT
@@ -581,13 +500,11 @@ export default function Footer() {
           lg:px-24
         "
       >
-
         <div className="group min-w-0  font-bingo-regular font-bold tracking-widest">
           <RotateText className="text-sm text-[#737b89]">
             Copyright © 2026 Hashhbit Studio. All rights reserved.
           </RotateText>
         </div>
-
 
         <div
           className="
@@ -598,9 +515,7 @@ export default function Footer() {
             bg-blue-600
           "
         />
-
       </div>
-
     </footer>
   );
 }

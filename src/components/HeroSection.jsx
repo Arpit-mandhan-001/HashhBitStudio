@@ -72,7 +72,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-[92vh] flex flex-col justify-center items-center pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-6 md:px-12 overflow-hidden">
+      <section className="relative min-h-full flex flex-col justify-center items-center pt-28 sm:pt-28  px-4 sm:px-6 md:px-12 overflow-hidden">
         {/* =====================================================
           BACKGROUND AMBIENT LIGHTS
       ====================================================== */}
@@ -110,8 +110,8 @@ export default function HeroSection() {
             >
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#315BEA]" />
 
-              <span className="text-[10px] sm:text-xs md:text-sm font-raleway font-semibold  uppercase tracking-[0.15em] text-[#65477F]">
-                Technology • Creativity • Growth
+              <span className="text-[10px] sm:text-xs md:text-sm font-inter font-normal  uppercase tracking-[0.15em] text-[#65477F]">
+                IDEAS • DESIGN • TECHNOLOGY • GROWTH
               </span>
 
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#B69A68]" />
@@ -137,7 +137,7 @@ export default function HeroSection() {
                   duration: 0.7,
                   delay: 0.1,
                 }}
-                className="block text-[48px] xs:text-[56px] sm:text-[64px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-bold font-bingo-italic tracking-wide bg-gradient-to-b via-[#C084FC] via-[#8B5CF6] via-[55%] to-[#4C1D95] bg-clip-text text-transparent"
+                className="block text-[48px] xs:text-[56px] sm:text-[64px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-bold font-bingo-italic tracking-wide bg-gradient-to-b from-[#C084FC] to-[#4C1D95] bg] bg-clip-text text-transparent"
               >
                 WE BUILD
               </motion.span>
@@ -151,28 +151,28 @@ export default function HeroSection() {
                   GHOST / TRAILING TEXT
               ---------------------------------------------- */}
 
-                {[2, 1].map((layer) => (
+                {/* {[2, 1].map((layer) => (
                   <motion.span
                     key={`${heroWords[activeWord]}-${layer}`}
                     initial={{
                       opacity: 0,
-                      x: -layer * 15,
+                      x: `${-layer * 1.8}%`,
                       y: -layer * 8,
                     }}
                     animate={{
                       opacity: 0.025 + (5 - layer) * 0.012,
-                      x: -layer * 16,
+                      x: `${-layer * 0.8}%`,
                       y: -layer * 9,
                     }}
                     transition={{
                       duration: 1,
                       ease: "easeOut",
                     }}
-                    className="absolute font-display font-black text-[30px] xs:text-[36px] sm:text-[46px] md:text-[60px] lg:text-[70px] xl:text-[78px] text-[#4B2E63] whitespace-nowrap pointer-events-none select-none -mt-8"
+                    className="absolute font-inter font-semibold font-black text-[30px] xs:text-[36px] sm:text-[46px] md:text-[60px] lg:text-[70px] xl:text-[78px] text-[#4B2E63] whitespace-nowrap pointer-events-none select-none -mt-8"
                   >
                     {heroWords[activeWord]}
                   </motion.span>
-                ))}
+                ))} */}
 
                 {/* ---------------------------------------------
                   MAIN ANIMATED WORD
@@ -203,7 +203,7 @@ export default function HeroSection() {
                       duration: 1.0,
                       ease: [0.76, 0, 0.24, 1],
                     }}
-                    className="relative z-10 font-display font-black text-[30px] xs:text-[36px] sm:text-[46px] md:text-[60px] lg:text-[70px] xl:text-[78px] text-[#181719] whitespace-nowrap select-none -mt-8"
+                    className="relative z-10 font-black text-[30px] xs:text-[36px] sm:text-[46px] md:text-[60px] lg:text-[70px] xl:text-[78px] text-[#181719] whitespace-nowrap select-none font-sora font-semibold"
                   >
                     {heroWords[activeWord]}
                   </motion.span>
@@ -228,7 +228,7 @@ export default function HeroSection() {
                 duration: 0.7,
                 delay: 0.5,
               }}
-              className="mt-6 sm:mt-2 font-poppins text-xs sm:text-sm md:text-base lg:text-lg text-[#65477F] max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
+              className="mt-6 sm:mt-2 font-inter font-[300] text-xs sm:text-sm md:text-base lg:text-lg text-[#65477F] max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
             >
               Digital experiences engineered for ambitious brands.
               <br className="hidden sm:block" />
@@ -257,7 +257,7 @@ export default function HeroSection() {
           >
             {/* Primary Button */}
 
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 font-raleway w-full">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full font-inter font-[500]">
               {/* Primary */}
               <HoverBlurButton
                 href="#services"
@@ -296,9 +296,9 @@ export default function HeroSection() {
               delay: 1.3,
               duration: 0.8,
             }}
-            className="flex flex-col items-center gap-2 text-[#65477F] mt-6 sm:mt-6"
+            className="flex flex-col items-center gap-2 text-[#65477F] mt-10 sm:mt-6"
           >
-            <span className="text-[9px] sm:text-[11px] font-semibold tracking-[0.15em] sm:tracking-widest uppercase font-poppins">
+            <span className="text-[9px] sm:text-[11px] font-inter font-semibold tracking-[0.15em] sm:tracking-widest uppercase mt-3 ">
               Scroll To Explore Services
             </span>
 
@@ -317,9 +317,9 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        <div className="w-[108%] overflow-hidden">
+        {/* <div className="w-[108%] overflow-hidden">
           <DesignMarquee />
-        </div>
+        </div> */}
       </section>
     </>
   );

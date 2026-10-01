@@ -91,7 +91,6 @@
 // via-[#241A2F]
 // to-[#241A2F]
 
-
 //           p-4
 
 //           shadow-[0_12px_40px_-18px_rgba(36,26,47,0.8)]
@@ -216,8 +215,6 @@
 
 // export default FeatureCard;
 
-
-
 export function FeatureCard({
   number,
   title,
@@ -244,7 +241,7 @@ export function FeatureCard({
     >
       {/* NUMBER BEHIND CARD */}
 
-      <span
+      {/* <span
         aria-hidden="true"
         className={`
           pointer-events-none
@@ -254,8 +251,8 @@ export function FeatureCard({
           -top-5
 
           select-none
-          font-display
-          text-7xl
+          font-poppins
+          text-6xl
           font-bold
           leading-none
 
@@ -277,7 +274,7 @@ export function FeatureCard({
         `}
       >
         {number}
-      </span>
+      </span> */}
 
       {/* CARD */}
 
@@ -290,21 +287,15 @@ export function FeatureCard({
           border
           border-lavender/15
           bg-charcoal/95
-
           p-4
-
           shadow-[0_10px_30px_-15px_rgba(0,0,0,0.6)]
           backdrop-blur-md
-
           transition-all
           duration-500
           ease-premium
-
           group-hover:-translate-y-1.5
           group-hover:border-gold/50
-          group-hover:bg-plum/50
           group-hover:shadow-glow
-
           group-focus-visible:-translate-y-1.5
           group-focus-visible:border-gold/50
           group-focus-visible:bg-plum/50
@@ -335,12 +326,7 @@ export function FeatureCard({
             group-focus-visible:text-gold
           "
         >
-          {Icon && (
-            <Icon
-              className="h-4 w-4"
-              strokeWidth={1.75}
-            />
-          )}
+          {Icon && <Icon className="h-4 w-4" strokeWidth={1.75} />}
         </div>
 
         {/* Title */}
@@ -348,13 +334,12 @@ export function FeatureCard({
         <h3
           className="
             mt-3
-            font-display
             text-base
-            font-semibold
+            font-bold
             leading-tight
             text-ivory
-            font-bingo-italic
-            tracking-[0.027em]
+            font-sora
+            tracking-tight
           "
         >
           {title}
@@ -375,7 +360,7 @@ export function FeatureCard({
 
             group-hover:text-beige/85
             group-focus-visible:text-beige/85
-            font-raleway
+            font-inter
             font-semibold
           "
         >

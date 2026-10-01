@@ -13,6 +13,7 @@ import {
   Globe2,
   Command,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -88,11 +89,11 @@ export default function Navbar() {
     <>
       {/* Navigation Header */}
       <header
-        className={`fixed top-0 left-0 z-40 w-full px-6 py-5 md:px-12 md:py-6 transition-all duration-300 pointer-events-none ${scrolled ? "backdrop-blur-sm bg-[#F7F3EC]/40" : ""
-          }`}
+        className={`fixed top-0 left-0 z-40 w-full px-6 py-5 md:px-12 md:py-6 transition-all duration-300 pointer-events-none ${
+          scrolled ? "backdrop-blur-sm bg-[#F7F3EC]/40" : ""
+        }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-
           {/* LOGO - Completely separate on the left */}
           <div className="pointer-events-auto">
             <div className="flex items-center gap-2.5 bg-[#F7F3EC]/80 backdrop-blur-md px-3.5 py-2 rounded-full border border-[#B8A6C9]/40 shadow-sm hover:border-[#65477F]/50 transition-all duration-300">
@@ -101,7 +102,7 @@ export default function Navbar() {
                 className="flex items-center gap-2.5 group"
                 aria-label="Hashhbit Studio Home"
               >
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#4B2E63] via-[#65477F] to-[#B69A68] flex items-center justify-center text-[#F7F3EC] font-display font-bold text-lg shadow-sm shadow-[#4B2E63]/20 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
+                {/* <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#4B2E63] via-[#65477F] to-[#B69A68] flex items-center justify-center text-[#F7F3EC] font-display font-bold text-lg shadow-sm shadow-[#4B2E63]/20 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
                   <span>H#</span>
                 </div>
 
@@ -114,7 +115,15 @@ export default function Navbar() {
                   <span className="text-[9px] uppercase tracking-widest text-[#65477F] font-semibold -mt-1">
                     STUDIO
                   </span>
-                </div>
+                </div> */}
+
+                <Image
+                  src="/images/logo-(2).png"
+                  alt="Description"
+                  width={150}
+                  height={10}
+                  className="h-auto"
+                />
               </a>
             </div>
           </div>
@@ -130,18 +139,21 @@ export default function Navbar() {
               {/* Hamburger */}
               <div className="w-4 h-3 flex flex-col justify-between items-center">
                 <span
-                  className={`w-full h-[2px] bg-[#4B2E63] rounded-full transition-all duration-300 ${isOpen ? "rotate-45 translate-y-[5px]" : ""
-                    }`}
+                  className={`w-full h-[2px] bg-[#4B2E63] rounded-full transition-all duration-300 ${
+                    isOpen ? "rotate-45 translate-y-[5px]" : ""
+                  }`}
                 />
 
                 <span
-                  className={`w-full h-[2px] bg-[#4B2E63] rounded-full transition-all duration-300 ${isOpen ? "opacity-0" : ""
-                    }`}
+                  className={`w-full h-[2px] bg-[#4B2E63] rounded-full transition-all duration-300 ${
+                    isOpen ? "opacity-0" : ""
+                  }`}
                 />
 
                 <span
-                  className={`w-full h-[2px] bg-[#4B2E63] rounded-full transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-[5px]" : ""
-                    }`}
+                  className={`w-full h-[2px] bg-[#4B2E63] rounded-full transition-all duration-300 ${
+                    isOpen ? "-rotate-45 -translate-y-[5px]" : ""
+                  }`}
                 />
               </div>
 
@@ -174,20 +186,27 @@ export default function Navbar() {
                 damping: 30,
                 stiffness: 280,
               }}
-              className="w-full max-w-xl h-full  border-l border-[#B8A6C9]/40 shadow-2xl p-2 md:p-10 flex flex-col justify-between overflow-y-auto bg-transparent rounded-3xl"
+              className="w-full max-w-xl h-full  border-l border-[#B8A6C9]/40 shadow-2xl p-2 md:p-10 flex flex-col justify-between overflow-y-auto bg-[#FAF8FF]/40 rounded-3xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header inside drawer */}
-              <div className="flex items-center justify-between pb-6 border-b border-[#D8CEC3]/60">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#4B2E63] text-[#F7F3EC] flex items-center justify-center font-display font-bold text-sm">
+              <div className="flex items-center justify-between pb-6 border-b border-[#D8CEC3]/60 ">
+                <div className=" items-center gap-3">
+                  {/* <div className="w-10 h-10 rounded-lg bg-[#4B2E63] text-[#F7F3EC] flex items-center justify-center font-display font-bold text-sm">
                     H#
-                  </div>
+                  </div> */}
+                  <Image
+                  src="/images/logo-(2).png"
+                  alt="Description"
+                  width={150}
+                  height={10}
+                  className="h-auto mb-2"
+                />
 
                   <div>
-                    <h3 className="font-poppins font-bold text-sm text-[#282126]">
+                    {/* <h3 className="font-poppins font-bold text-sm text-[#282126]">
                       HASHHBIT STUDIO
-                    </h3>
+                    </h3> */}
 
                     <p className="text-[10px] text-[#65477F] uppercase tracking-widest font-bold font-raleway">
                       Digital & Web Architecture
@@ -224,7 +243,6 @@ export default function Navbar() {
                       className="group flex items-center justify-between p-3.5 rounded-2xl hover:bg-[#E8DED2]/80 border border-transparent hover:border-[#B8A6C9]/50 transition-all duration-200 font-raleway"
                     >
                       <div className="flex items-center gap-4">
-
                         <div className="w-8 h-8 rounded-xl bg-[#D9CEE3]/50 group-hover:bg-[#65477F] group-hover:text-[#F7F3EC] text-[#4B2E63] flex items-center justify-center transition-all duration-300">
                           <Icon className="w-4 h-4" />
                         </div>
@@ -245,8 +263,6 @@ export default function Navbar() {
                   );
                 })}
               </div>
-
-              
             </motion.div>
           </motion.div>
         )}

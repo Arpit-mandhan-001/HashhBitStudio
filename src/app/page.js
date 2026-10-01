@@ -12,12 +12,27 @@ import Footer from "@/components/Footer";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Blogs from "@/components/Blogs";
 import CuriousMindHero from "@/components/CuriousMindHero";
+import Testimonials from "@/components/Testimonials";
+import AboutUs from "@/components/AboutUS";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#F7F3EC] text-[#282126] selection:bg-[#B8A6C9] selection:text-[#282126]">
+    <main className="relative min-h-screen text-[#282126] selection:bg-[#B8A6C9] selection:text-[#282126]">
       {/* Background Interactive Kinetic Canvas with mouse particle reactions */}
-      <InteractiveCanvas />
+      {/* <InteractiveCanvas /> */}
+
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed inset-0 w-full h-full object-cover -z-10"
+      >
+        <source src="/videos/video2.mp4" type="video/mp4" />
+      </video>
+
+      {/* Optional overlay */}
+      <div className="fixed inset-0 bg-[#F7F3EC]/60 -z-10" />
 
       {/* Smooth Magnetic Custom Cursor */}
       <CustomCursor />
@@ -34,6 +49,7 @@ export default function Home() {
       {/* Visual Work Reel & Proof of Scale */}
       <WhyChooseUs />
       <CuriousMindHero />
+      <AboutUs />
 
       {/* Modern Tech Stack & Modular Architecture Visualizer */}
       {/* <TechStackVisualizer /> */}
@@ -41,10 +57,30 @@ export default function Home() {
       {/* Interactive Scope & Project Configurator */}
       {/* <InteractiveProjectEstimator /> */}
 
-      {/* Luxury Footer with Active Palette Matrix */}
-
+      <Testimonials />
       <Blogs />
       <Footer />
+
+      <div className="w-full min-h-screen ">
+        <div className="flex items-center justify-center text-4xl font-bingo-italic">
+          abcdefghijklmnopqrstuvwxyz
+        </div>
+        <div className="flex items-center justify-center text-4xl font-bingo-regular">
+          abcdefghijklmnopqrstuvwxyz
+        </div>
+        <div className="flex items-center justify-center text-4xl font-raleway">
+          abcdefghijklmnopqrstuvwxyz
+        </div>
+        <div className="flex items-center justify-center text-4xl font-poppins">
+          abcdefghijklmnopqrstuvwxyz
+        </div>
+        <div className="flex items-center justify-center text-4xl font-sora ">
+          abcdefghijklmnopqrstuvwxyz
+        </div>
+        <div className="flex items-center justify-center text-4xl font-inter ">
+          abcdefghijklmnopqrstuvwxyz
+        </div>
+      </div>
     </main>
   );
 }

@@ -6,6 +6,7 @@ import {
   MessagesSquare,
   Wallet,
   LayoutGrid,
+  Sparkles,
 } from "lucide-react";
 import { FeatureCard } from "./FeatureCard";
 import { ImageColumn } from "./ImageColumn";
@@ -67,49 +68,37 @@ const columnTwoImages = [
 
 export function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-charcoal px-6 py-24 text-ivory md:px-12 lg:px-20 -mt-10">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-plum/30 blur-[140px]"
-      />
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-gold/10 blur-[140px]"
-      />
+    <section className="relative overflow-hidden bg-[#FAF8FF] px-6 py-24 text-ivory md:px-12 lg:px-20 -mt-10 ">
+      
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-3 mb-5">
-            <Asterisk className="h-5 w-5 text-gold" strokeWidth={2} />
-
-            <span className="font-raleway font-semibold text-sm tracking-wide text-lavender">
-              03. Why Choose Us?
-            </span>
-
-            <span className="hidden h-px flex-1 bg-lavender/20 md:block" />
+        <div className="relative max-w-2xl md:-left-10">
+          <div className="text-[#17113D] inline-flex items-center gap-2 rounded-full border border-[#B8A6C9]/40 bg-[#E8DED2] px-4 py-2 text-xs font-bold uppercase tracking-widest mb-5 -mt-5" >
+            <Sparkles className="h-3.5 w-3.5 text-[#B69A68]" />
+            Why Choose Us
           </div>
 
           <h2
             className="
-              mt-1 inline-block whitespace-nowrap
+              mt-1 mb-5 inline-block whitespace-nowrap
               text-[clamp(2rem,5vw,4rem)]
               font-semibold
-              font-poppins
+              font-sora
               leading-[0.95]
               tracking-[-0.04em]
               bg-gradient-to-r
-              from-[#1A0B2E]
-              via-[#563477]
-              to-[#C9A8FF]
+              from-[#17113D]
+              via-[#6246E5]
+              to-[#B8A5FF]
               bg-clip-text
               text-transparent
               drop-shadow-[0_8px_30px_rgba(147,112,190,0.18)]
+              pb-3
             "
           >
             Turning Bold Ideas Into
             <br />
-            <span className="-mt-2 inline-block">Digital Impact</span>
+            <span className=" mt-1 inline-block font-sora">Digital Impact</span>
           </h2>
         </div>
 
@@ -128,7 +117,7 @@ export function WhyChooseUs() {
         >
           {/* LEFT CARDS — 01, 02, 03 */}
 
-          <div className="relative z-20 flex flex-col gap-8 lg:mt-0">
+          <div className="relative z-20 flex flex-col gap-8 lg:mt-0 font-">
             {leftFeatures.map((feature, i) => (
               <FeatureCard
                 key={feature.number}
@@ -182,12 +171,12 @@ export function WhyChooseUs() {
 
           <div className="order-3 relative z-20 flex flex-col gap-8 lg:order-none lg:mt-0">
             {rightFeatures.map((feature, i) => (
-  <FeatureCard
-    key={feature.number}
-    {...feature}
-    stackIndex={i}
-    numberPositionClassName="right-6 lg:left-6"
-    className={`
+              <FeatureCard
+                key={feature.number}
+                {...feature}
+                stackIndex={i}
+                numberPositionClassName="right-6 lg:left-6"
+                className={`
       ${
         i === 0
           ? "lg:-translate-x-6 lg:-translate-y-8"
@@ -196,9 +185,8 @@ export function WhyChooseUs() {
             : "lg:-translate-x-6 lg:translate-y-8"
       }
     `}
-  />
-))}
-
+              />
+            ))}
           </div>
         </div>
       </div>

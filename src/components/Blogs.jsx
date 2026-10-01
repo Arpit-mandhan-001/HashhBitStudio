@@ -101,11 +101,11 @@ const Blogs = () => {
                 text-[30px]
                 font-semibold
                 leading-none
-                tracking-[0.04em]
+                tracking-[-0.04em]
                 text-zinc-950
                 sm:text-[38px]
                 lg:text-[42px]
-                font-bingo-regular
+                font-sora
               "
             >
               BLOGS
@@ -164,6 +164,7 @@ const Blogs = () => {
                 focus-visible:ring-2
                 focus-visible:ring-[#3B1F5C]
                 focus-visible:ring-offset-2
+                inline-flex
               "
             >
 
@@ -190,45 +191,9 @@ const Blogs = () => {
                 Discover All
               </span>
 
-            </button>
-
-
-            {/* Header arrow */}
-
-            <button
-              type="button"
-              aria-label="Discover all blogs"
-              className="
-                group
-                relative
-                flex
-                h-12
-                w-12
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-zinc-950/15
-                bg-transparent
-                text-zinc-950
-                transition-all
-                duration-500
-                ease-out
-                hover:-translate-y-1
-                hover:border-[#3B1F5C]
-                hover:bg-[#3B1F5C]
-                hover:text-white
-                hover:shadow-[0_15px_35px_rgba(59,31,92,0.2)]
-                focus:outline-none
-                focus-visible:ring-2
-                focus-visible:ring-[#3B1F5C]
-                focus-visible:ring-offset-2
-              "
-            >
-
               <span
                 className="
+                ml-4
                   relative
                   transition-transform
                   duration-500
@@ -443,7 +408,7 @@ const Blogs = () => {
                     sm:text-[22px]
                     lg:text-[23px]
                     group-hover:translate-x-1
-                    font-poppins 
+                    font-sora 
                     tracking-tight
                   "
                 >
