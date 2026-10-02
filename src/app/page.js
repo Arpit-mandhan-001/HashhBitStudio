@@ -43,13 +43,13 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
+
+      <AboutUs />
       {/* {Service} */}
       <ServicesVisualMatrix />
-
       {/* Visual Work Reel & Proof of Scale */}
       <WhyChooseUs />
       <CuriousMindHero />
-      <AboutUs />
 
       {/* Modern Tech Stack & Modular Architecture Visualizer */}
       {/* <TechStackVisualizer /> */}

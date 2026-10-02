@@ -480,8 +480,12 @@ function VerticalReelContent({ service, index, total, progress }) {
 
   const y = useTransform(
     progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [initialY, "0%", "0%", "-15%", "-100%"],
+    index === total - 1
+      ? [enterStart, enterEnd, exitStart, end]
+      : [enterStart, enterEnd, exitStart, end, exitEnd],
+    index === total - 1
+      ? [initialY, "0%", "0%", "0%"]
+      : [initialY, "0%", "0%", "-15%", "-100%"],
   );
 
   /* ============================================================
@@ -489,40 +493,60 @@ function VerticalReelContent({ service, index, total, progress }) {
   ============================================================ */
 
   const scale = useTransform(
-    progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [index === 0 ? 1 : 0.9, 1, 1, 0.97, 0.9],
-  );
+  progress,
+  index === total - 1
+    ? [enterStart, enterEnd, exitStart, end]
+    : [enterStart, enterEnd, exitStart, end, exitEnd],
+  index === total - 1
+    ? [index === 0 ? 1 : 0.9, 1, 1, 1]
+    : [index === 0 ? 1 : 0.9, 1, 1, 0.97, 0.9],
+);
+
 
   /* ============================================================
      ROTATION
   ============================================================ */
 
   const rotateX = useTransform(
-    progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [index === 0 ? 0 : 5, 0, 0, -2, -5],
-  );
+  progress,
+  index === total - 1
+    ? [enterStart, enterEnd, exitStart, end]
+    : [enterStart, enterEnd, exitStart, end, exitEnd],
+  index === total - 1
+    ? [index === 0 ? 0 : 5, 0, 0, 0]
+    : [index === 0 ? 0 : 5, 0, 0, -2, -5],
+);
+
 
   /* ============================================================
      OPACITY
   ============================================================ */
 
   const opacity = useTransform(
-    progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [index === 0 ? 1 : 0, 1, 1, 0.85, 0],
+  progress,
+  index === total - 1
+    ? [enterStart, enterEnd, exitStart, end]
+    : [enterStart, enterEnd, exitStart, end, exitEnd],
+  index === total - 1
+    ? [index === 0 ? 1 : 0, 1, 1, 1]
+    : [index === 0 ? 1 : 0, 1, 1, 0.85, 0],
   );
+
 
   /* ============================================================
      BLUR
   ============================================================ */
 
   const blur = useTransform(
-    progress,
-    [enterStart, enterEnd, exitStart, end, exitEnd],
-    [index === 0 ? "0px" : "8px", "0px", "0px", "1px", "8px"],
+  progress,
+  index === total - 1
+    ? [enterStart, enterEnd, exitStart, end]
+    : [enterStart, enterEnd, exitStart, end, exitEnd],
+  index === total - 1
+    ? [index === 0 ? "0px" : "8px", "0px", "0px", "0px"]
+    : [index === 0 ? "0px" : "8px", "0px", "0px", "1px", "8px"],
   );
+
 
   const filter = useTransform(blur, (value) => `blur(${value})`);
 
