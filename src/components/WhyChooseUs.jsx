@@ -55,15 +55,17 @@ const rightFeatures = [
 ];
 
 const columnOneImages = [
-  "https://picsum.photos/id/1011/640/800",
-  "https://picsum.photos/id/1027/640/800",
-  "https://picsum.photos/id/1005/640/800",
+  "/images/l1.jpg",
+  "/images/l2.jpg",
+  "/images/l3.jpg",
+  "/images/l4.jpg",
 ];
 
 const columnTwoImages = [
-  "https://picsum.photos/id/1012/640/800",
-  "https://picsum.photos/id/1013/640/800",
-  "https://picsum.photos/id/1025/640/800",
+  "/images/r1.jpg",
+  "/images/r2.jpg",
+  "/images/r3.jpg",
+  "/images/r4.jpg",
 ];
 
 export function WhyChooseUs() {

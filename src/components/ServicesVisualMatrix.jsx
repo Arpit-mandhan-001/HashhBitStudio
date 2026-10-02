@@ -314,7 +314,7 @@ function AnimatedBuiltToMove() {
 
   return (
     <motion.span
-      className="mt-5 block text-[#4B2E63]"
+      className="mt-5 block text-[#4B2E63]  "
       initial="hidden"
       animate="visible"
       variants={{
