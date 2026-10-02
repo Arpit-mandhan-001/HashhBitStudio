@@ -121,7 +121,6 @@ export default function HeroSection() {
                 }}
                 className="block text-[48px] xs:text-[56px] sm:text-[64px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-black font-sora tracking-[-0.045em] text-[#6b22da]  bg-clip-text "
               >
-                
                 WE BUILD
               </motion.span>
 
@@ -129,7 +128,7 @@ export default function HeroSection() {
                 ANIMATED SERVICE TYPOGRAPHY
             ================================================== */}
 
-              <div className="relative mt-2 sm:mt-1 h-[clamp(4rem,18vw,10rem)] flex items-center justify-center overflow-visible tracking-widest w-full font-bingo-regular ">
+              <div className="relative mt-5 sm:mt-5 md:mt-0 h-[clamp(4rem,18vw,10rem)] flex items-center justify-center overflow-visible tracking-widest w-full font-bingo-regular">
                 {/* ---------------------------------------------
                   GHOST / TRAILING TEXT
               ---------------------------------------------- */}
@@ -171,7 +170,7 @@ export default function HeroSection() {
                       filter: "blur(12px)",
                     }}
                     animate={{
-                      opacity: 1,
+                      opacity: 0.7,
                       y: 0,
                       scale: 1,
                       filter: "blur(0px)",
@@ -186,7 +185,18 @@ export default function HeroSection() {
                       duration: 1.0,
                       ease: [0.76, 0, 0.24, 1],
                     }}
-                    className="relative z-10 font-black text-[30px] xs:text-[36px] sm:text-[46px] md:text-[60px] lg:text-[70px] xl:text-[78px] text-[#181719] whitespace-nowrap select-none font-sora font-semibold"
+                    className="relative
+  z-10
+  inline-flex
+  whitespace-nowrap
+  text-[clamp(20px,8vw,78px)]
+  leading-none
+  text-[#181719]
+  select-none
+  font-sora
+  font-semibold
+  tracking-tight
+  md:tracking-normal"
                   >
                     {heroWords[activeWord]}
                   </motion.span>
@@ -263,23 +273,23 @@ export default function HeroSection() {
           {/* =====================================================
             INTERACTIVE VISUAL SHOWCASE
         ====================================================== */}
- <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: 0.15,
-              }}
-              className="flex items-center justify-center gap-2 "
-            >
-              {/* <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#315BEA]" /> */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+            }}
+            className="flex items-center justify-center gap-2 "
+          >
+            {/* <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#315BEA]" /> */}
 
-              <span className="text-[10px] sm:text-xs md:text-sm font-inter font-normal  uppercase tracking-[0.15em] text-[#65477F]">
-                IDEAS • DESIGN • TECHNOLOGY • GROWTH
-              </span>
+            <span className="text-[10px] sm:text-xs md:text-sm font-inter font-normal  uppercase tracking-[0.15em] text-[#65477F]">
+              IDEAS • DESIGN • TECHNOLOGY • GROWTH
+            </span>
 
-              {/* <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#B69A68]" /> */}
-            </motion.div>
+            {/* <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#B69A68]" /> */}
+          </motion.div>
           {/* =====================================================
             SCROLL INDICATOR
         ====================================================== */}
@@ -315,8 +325,6 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
-
-        
 
         {/* <div className="w-[108%] overflow-hidden">
           <DesignMarquee />
