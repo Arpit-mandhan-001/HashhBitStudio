@@ -119,8 +119,9 @@ export default function HeroSection() {
                   duration: 0.7,
                   delay: 0.1,
                 }}
-                className="block text-[48px] xs:text-[56px] sm:text-[64px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-black font-sora tracking-[-0.045em] bg-gradient-to-b from-[#C084FC] to-[#4C1D95] bg] bg-clip-text text-transparent"
+                className="block text-[48px] xs:text-[56px] sm:text-[64px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-black font-sora tracking-[-0.045em] text-[#6b22da]  bg-clip-text "
               >
+                
                 WE BUILD
               </motion.span>
 
