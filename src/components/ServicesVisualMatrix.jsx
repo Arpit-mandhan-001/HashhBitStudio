@@ -209,15 +209,103 @@ export default function ServicesVisualMatrix({ className = "" }) {
             ================================================== */}
 
             <div className="relative h-[calc(100%-7.5rem)] translate-y-30 overflow-hidden rounded-4xl bg-transparent">
-              {services.map((service, index) => (
-                <VerticalReelCard
-                  key={service.number}
-                  service={service}
-                  index={index}
-                  total={services.length}
-                  progress={scrollYProgress}
-                />
-              ))}
+              {/* ================================================
+                  FIXED FRAME
+                  Background, border, decorative circles, grid and
+                  glow are rendered once and never change or
+                  animate. Using services[0]'s color/accent here —
+                  swap this reference if you'd rather lock the
+                  frame to a different service's palette.
+              ================================================ */}
+
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative h-[min(82vh,760px)] w-full">
+                  {/* Shadow */}
+
+                  <div
+                    className="absolute inset-0 translate-y-5 scale-[0.96] rounded-[2rem] opacity-30 blur-2xl"
+                    style={{
+                      backgroundColor: services[0].color,
+                    }}
+                  />
+
+                  {/* Main card */}
+
+                  <div
+                    className="relative h-full w-full overflow-hidden rounded-[2rem] border shadow-[0_30px_100px_rgba(40,33,38,0.35)]"
+                    style={{
+                      backgroundColor: services[0].color,
+                      borderColor: `${services[0].accent}45`,
+                    }}
+                  >
+                    {/* Decorative circle */}
+
+                    <div
+                      className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full border"
+                      style={{
+                        borderColor: `${services[0].accent}20`,
+                      }}
+                    />
+
+                    {/* Decorative circle */}
+
+                    <div
+                      className="pointer-events-none absolute -bottom-60 -right-20 h-[600px] w-[600px] rounded-full border"
+                      style={{
+                        borderColor: `${services[0].accent}15`,
+                      }}
+                    />
+
+                    {/* Glow */}
+
+                    <div
+                      className="pointer-events-none absolute right-[15%] top-[20%] h-40 w-40 rounded-full blur-[80px]"
+                      style={{
+                        backgroundColor: services[0].accent,
+                        opacity: 0.22,
+                      }}
+                    />
+
+                    {/* Grid */}
+
+                    <div className="pointer-events-none absolute inset-0 opacity-[0.035]">
+                      <div
+                        className="h-full w-full"
+                        style={{
+                          backgroundImage: `
+                            linear-gradient(
+                              ${services[0].accent} 1px,
+                              transparent 1px
+                            ),
+                            linear-gradient(
+                              90deg,
+                              ${services[0].accent} 1px,
+                              transparent 1px
+                            )
+                          `,
+                          backgroundSize: "60px 60px",
+                        }}
+                      />
+                    </div>
+
+                    {/* ============================================
+                        ANIMATED CONTENT
+                        Only this part changes on scroll — the frame
+                        above stays exactly as it is.
+                    ============================================ */}
+
+                    {services.map((service, index) => (
+                      <VerticalReelContent
+                        key={service.number}
+                        service={service}
+                        index={index}
+                        total={services.length}
+                        progress={scrollYProgress}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               {/* Progress dots */}
 
@@ -365,10 +453,14 @@ function AnimatedBuiltToMove() {
 }
 
 /* ================================================================
-   DESKTOP VERTICAL REEL CARD
+   DESKTOP VERTICAL REEL — ANIMATED CONTENT
+   The colored box/frame this sits inside is now static (rendered
+   once in RIGHT REEL above) — this component only ever renders the
+   heading, image, description, button and progress bar, and is the
+   part that moves/scales/fades as you scroll.
 ================================================================ */
 
-function VerticalReelCard({ service, index, total, progress }) {
+function VerticalReelContent({ service, index, total, progress }) {
   const start = index / total;
   const end = (index + 1) / total;
 
@@ -383,7 +475,7 @@ function VerticalReelCard({ service, index, total, progress }) {
   const initialY = index === 0 ? "0%" : "100%";
 
   /* ============================================================
-     CARD Y
+     CONTENT Y
   ============================================================ */
 
   const y = useTransform(
@@ -435,7 +527,7 @@ function VerticalReelCard({ service, index, total, progress }) {
   const filter = useTransform(blur, (value) => `blur(${value})`);
 
   /* ============================================================
-     CARD PROGRESS
+     CONTENT PROGRESS
   ============================================================ */
 
   const cardProgress = useTransform(progress, [start, end], ["0%", "100%"]);
@@ -451,350 +543,269 @@ function VerticalReelCard({ service, index, total, progress }) {
         zIndex: total - index,
         transformPerspective: 1200,
       }}
-      className="absolute inset-0 flex items-center justify-center"
+      className="absolute inset-0 flex h-full flex-col p-6 sm:p-8 md:p-9 xl:p-10"
     >
-      {/* ========================================================
-          CARD
-      ======================================================== */}
+      {/* Service heading */}
 
-      <div className="relative h-[min(82vh,760px)] w-full">
-        {/* Shadow */}
+      <div className="relative -top-5 flex shrink-0 flex-col items-center text-center">
+        <h3
+          className="
+            whitespace-nowrap
+            font-sora
+            text-[clamp(2rem,4vw,4rem)]
+            font-extrabold
+            leading-none
+            tracking-tight
+            text-[#F7F3EC]
+          "
+        >
+          {service.name}
+        </h3>
 
         <div
-          className="absolute inset-0 translate-y-5 scale-[0.96] rounded-[2rem] opacity-30 blur-2xl"
+          className="mt-5 h-1 w-56 rounded-full"
           style={{
-            backgroundColor: service.color,
+            backgroundColor: service.accent,
           }}
         />
+      </div>
 
-        {/* Main card */}
+      {/* Image */}
 
+      <div className="relative -top-5 mt-6 min-h-0 flex-1">
         <div
-          className="relative h-full w-full overflow-hidden rounded-[2rem] border shadow-[0_30px_100px_rgba(40,33,38,0.35)]"
+          className="relative h-full w-full overflow-hidden rounded-[1.5rem] border"
           style={{
-            backgroundColor: service.color,
-            borderColor: `${service.accent}45`,
+            borderColor: `${service.accent}35`,
           }}
         >
-          {/* Decorative circle */}
+          <Image
+            src={service.image}
+            alt={service.name}
+            fill
+            priority={index === 0}
+            sizes="(min-width: 1536px) 45vw, (min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-center"
+          />
+
+          {/* Image gradient */}
 
           <div
-            className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full border"
+            className="pointer-events-none absolute inset-0"
             style={{
-              borderColor: `${service.accent}20`,
+              background: `
+                linear-gradient(
+                  180deg,
+                  ${service.color}05 0%,
+                  transparent 50%,
+                  ${service.color}45 100%
+                )
+              `,
             }}
           />
 
-          {/* Decorative circle */}
+          {/* Category */}
 
-          <div
-            className="pointer-events-none absolute -bottom-60 -right-20 h-[600px] w-[600px] rounded-full border"
-            style={{
-              borderColor: `${service.accent}15`,
-            }}
-          />
-
-          {/* Glow */}
-
-          <div
-            className="pointer-events-none absolute right-[15%] top-[20%] h-40 w-40 rounded-full blur-[80px]"
-            style={{
-              backgroundColor: service.accent,
-              opacity: 0.22,
-            }}
-          />
-
-          {/* Grid */}
-
-          <div className="pointer-events-none absolute inset-0 opacity-[0.035]">
-            <div
-              className="h-full w-full"
+          <div className="absolute left-4 right-4 top-4 flex items-center justify-between sm:left-5 sm:right-5 sm:top-5">
+            <span
+              className="
+                group
+                rounded-full
+                border
+                px-3
+                py-1.5
+                text-[8px]
+                font-bold
+                uppercase
+                tracking-[0.2em]
+                backdrop-blur-md
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-0.5
+                hover:scale-105
+                hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]
+                sm:text-[9px] 
+              "
               style={{
-                backgroundImage: `
-                  linear-gradient(
-                    ${service.accent} 1px,
-                    transparent 1px
-                  ),
-                  linear-gradient(
-                    90deg,
-                    ${service.accent} 1px,
-                    transparent 1px
-                  )
-                `,
-                backgroundSize: "60px 60px",
+                color: service.accent,
+                backgroundColor: `${service.color}90`,
+                borderColor: `${service.accent}35`,
               }}
-            />
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = `0 0 18px ${service.accent}55`;
+
+                e.currentTarget.style.borderColor = `${service.accent}80`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = `0 0 0 rgba(0,0,0,0)`;
+
+                e.currentTarget.style.borderColor = `${service.accent}35`;
+              }}
+            >
+              {service.category}
+            </span>
           </div>
+        </div>
+      </div>
 
-          {/* ====================================================
-              MAIN CONTENT
-          ==================================================== */}
+      {/* Description */}
 
-          <div className="relative z-10 flex h-full flex-col p-6 sm:p-8 md:p-9 xl:p-10">
-            {/* Service heading */}
+      <div className="relative -top-5 mt-5 shrink-0">
+        <p
+          className="text-center font-sora text-sm font-medium leading-relaxed sm:text-[15px]"
+          style={{
+            color: service.accent,
+          }}
+        >
+          {service.tagline}
+        </p>
 
-            <div className="relative -top-5 flex shrink-0 flex-col items-center text-center">
-              <h3
-                className="
-                  whitespace-nowrap
-                  font-sora
-                  text-[clamp(2rem,4vw,4rem)]
-                  font-extrabold
-                  leading-none
-                  tracking-tight
-                  text-[#F7F3EC]
-                "
-              >
-                {service.name}
-              </h3>
+        {/* Features */}
 
-              <div
-                className="mt-5 h-1 w-56 rounded-full"
+        <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2">
+          {service.features.slice(0, 3).map((feature) => (
+            <div key={feature} className="flex items-center gap-2">
+              <span
+                className="h-1.5 w-1.5 shrink-0 rounded-full"
                 style={{
                   backgroundColor: service.accent,
                 }}
               />
-            </div>
 
-            {/* Image */}
-
-            <div className="relative -top-5 mt-6 min-h-0 flex-1">
-              <div
-                className="relative h-full w-full overflow-hidden rounded-[1.5rem] border"
-                style={{
-                  borderColor: `${service.accent}35`,
-                }}
-              >
-                <Image
-                  src={service.image}
-                  alt={service.name}
-                  fill
-                  priority={index === 0}
-                  sizes="(min-width: 1536px) 45vw, (min-width: 1024px) 50vw, 100vw"
-                  className="object-cover object-center"
-                />
-
-                {/* Image gradient */}
-
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background: `
-                      linear-gradient(
-                        180deg,
-                        ${service.color}05 0%,
-                        transparent 50%,
-                        ${service.color}45 100%
-                      )
-                    `,
-                  }}
-                />
-
-                {/* Category */}
-
-                <div className="absolute left-4 right-4 top-4 flex items-center justify-between sm:left-5 sm:right-5 sm:top-5">
-                  <span
-                    className="
-                      group
-                      rounded-full
-                      border
-                      px-3
-                      py-1.5
-                      text-[8px]
-                      font-bold
-                      uppercase
-                      tracking-[0.2em]
-                      backdrop-blur-md
-                      transition-all
-                      duration-300
-                      ease-out
-                      hover:-translate-y-0.5
-                      hover:scale-105
-                      hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]
-                      sm:text-[9px] 
-                    "
-                    style={{
-                      color: service.accent,
-                      backgroundColor: `${service.color}90`,
-                      borderColor: `${service.accent}35`,
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.boxShadow = `0 0 18px ${service.accent}55`;
-
-                      e.currentTarget.style.borderColor = `${service.accent}80`;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.boxShadow = `0 0 0 rgba(0,0,0,0)`;
-
-                      e.currentTarget.style.borderColor = `${service.accent}35`;
-                    }}
-                  >
-                    {service.category}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Description */}
-
-            <div className="relative -top-5 mt-5 shrink-0">
-              <p
-                className="text-center font-sora text-sm font-medium leading-relaxed sm:text-[15px]"
-                style={{
-                  color: service.accent,
-                }}
-              >
-                {service.tagline}
-              </p>
-
-              {/* Features */}
-
-              <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2">
-                {service.features.slice(0, 3).map((feature) => (
-                  <div key={feature} className="flex items-center gap-2">
-                    <span
-                      className="h-1.5 w-1.5 shrink-0 rounded-full"
-                      style={{
-                        backgroundColor: service.accent,
-                      }}
-                    />
-
-                    <span className="font-inter font-[600] text-[12px] text-white/45">
-                      {feature}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ==================================================
-                EXPLORE BUTTON
-            ================================================== */}
-
-            <a
-              href={`#${service.name.toLowerCase().replace(/\s+/g, "-")}`}
-              className="
-                group
-                absolute
-                bottom-3
-                right-3
-                inline-flex
-                items-center
-                gap-2
-                overflow-hidden
-                rounded-full
-                border
-                border-[#D6B77A]/40
-                bg-[#F7F3EC]/95
-                px-6
-                py-3
-                font-poppins
-                text-xs
-                font-semibold
-                text-[#282126]
-                shadow-[0_8px_30px_rgba(0,0,0,0.18)]
-                backdrop-blur-xl
-                transition-all
-                duration-500
-                ease-out
-                hover:-translate-y-1
-                hover:scale-[1.03]
-                hover:border-[#D6B77A]/80
-                hover:bg-[#FFF9EC]
-                hover:text-[#6F5630]
-                hover:shadow-[0_12px_35px_rgba(214,183,122,0.25)]
-              "
-            >
-              {/* Premium shine */}
-
-              <span
-                className="
-                  pointer-events-none
-                  absolute
-                  -left-[120%]
-                  top-0
-                  h-full
-                  w-[70%]
-                  rotate-[18deg]
-                  bg-gradient-to-r
-                  from-transparent
-                  via-white/70
-                  to-transparent
-                  opacity-0
-                  transition-all
-                  duration-700
-                  group-hover:left-[130%]
-                  group-hover:opacity-100
-                "
-              />
-
-              {/* Gold glow */}
-
-              <span
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-0
-                  rounded-full
-                  opacity-0
-                  shadow-[inset_0_0_20px_rgba(214,183,122,0.18)]
-                  transition-opacity
-                  duration-500
-                  group-hover:opacity-100
-                "
-              />
-
-              {/* Character animation */}
-
-              <span className="relative z-10 inline-flex">
-                {"Explore".split("").map((char, index) => (
-                  <span
-                    key={index}
-                    className="
-                        text-[#17113D]
-                        inline-block
-                        transform-gpu
-                        transition-transform
-                        duration-700
-                        ease-[cubic-bezier(0.22,1,0.36,1)]
-                        group-hover:rotate-[360deg]
-                        font-inter
-                      "
-                    style={{
-                      transitionDelay: `${index * 50}ms`,
-                    }}
-                  >
-                    {char}
-                  </span>
-                ))}
+              <span className="font-inter font-[600] text-[12px] text-white/45">
+                {feature}
               </span>
-
-              <ArrowUpRight
-                className="
-                  relative
-                  z-10
-                  h-4
-                  w-4
-                  transition-all
-                  duration-500
-                  group-hover:translate-x-1
-                  group-hover:-translate-y-1
-                "
-              />
-            </a>
-          </div>
-
-          {/* Card progress */}
-
-          <motion.div
-            className="absolute bottom-0 left-0 h-[3px]"
-            style={{
-              backgroundColor: service.accent,
-              width: cardProgress,
-            }}
-          />
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* ==================================================
+          EXPLORE BUTTON
+      ================================================== */}
+
+      <a
+        href={`#${service.name.toLowerCase().replace(/\s+/g, "-")}`}
+        className="
+          group
+          absolute
+          bottom-3
+          right-3
+          inline-flex
+          items-center
+          gap-2
+          overflow-hidden
+          rounded-full
+          border
+          border-[#D6B77A]/40
+          bg-[#F7F3EC]/95
+          px-6
+          py-3
+          font-poppins
+          text-xs
+          font-semibold
+          text-[#282126]
+          shadow-[0_8px_30px_rgba(0,0,0,0.18)]
+          backdrop-blur-xl
+          transition-all
+          duration-500
+          ease-out
+          hover:-translate-y-1
+          hover:scale-[1.03]
+          hover:border-[#D6B77A]/80
+          hover:bg-[#FFF9EC]
+          hover:text-[#6F5630]
+          hover:shadow-[0_12px_35px_rgba(214,183,122,0.25)]
+        "
+      >
+        {/* Premium shine */}
+
+        <span
+          className="
+            pointer-events-none
+            absolute
+            -left-[120%]
+            top-0
+            h-full
+            w-[70%]
+            rotate-[18deg]
+            bg-gradient-to-r
+            from-transparent
+            via-white/70
+            to-transparent
+            opacity-0
+            transition-all
+            duration-700
+            group-hover:left-[130%]
+            group-hover:opacity-100
+          "
+        />
+
+        {/* Gold glow */}
+
+        <span
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            rounded-full
+            opacity-0
+            shadow-[inset_0_0_20px_rgba(214,183,122,0.18)]
+            transition-opacity
+            duration-500
+            group-hover:opacity-100
+          "
+        />
+
+        {/* Character animation */}
+
+        <span className="relative z-10 inline-flex">
+          {"Explore".split("").map((char, index) => (
+            <span
+              key={index}
+              className="
+                  text-[#17113D]
+                  inline-block
+                  transform-gpu
+                  transition-transform
+                  duration-700
+                  ease-[cubic-bezier(0.22,1,0.36,1)]
+                  group-hover:rotate-[360deg]
+                  font-inter
+                "
+              style={{
+                transitionDelay: `${index * 50}ms`,
+              }}
+            >
+              {char}
+            </span>
+          ))}
+        </span>
+
+        <ArrowUpRight
+          className="
+            relative
+            z-10
+            h-4
+            w-4
+            transition-all
+            duration-500
+            group-hover:translate-x-1
+            group-hover:-translate-y-1
+          "
+        />
+      </a>
+
+      {/* Card progress */}
+
+      <motion.div
+        className="absolute bottom-0 left-0 h-[3px]"
+        style={{
+          backgroundColor: service.accent,
+          width: cardProgress,
+        }}
+      />
     </motion.div>
   );
 }

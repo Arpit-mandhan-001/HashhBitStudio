@@ -99,24 +99,6 @@ export default function HeroSection() {
           >
             {/* Small Top Label */}
 
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: 0.15,
-              }}
-              className="flex items-center justify-center gap-2 sm:gap-3 mb-5 sm:mb-6"
-            >
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#315BEA]" />
-
-              <span className="text-[10px] sm:text-xs md:text-sm font-inter font-normal  uppercase tracking-[0.15em] text-[#65477F]">
-                IDEAS • DESIGN • TECHNOLOGY • GROWTH
-              </span>
-
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#B69A68]" />
-            </motion.div>
-
             {/* =================================================
               MAIN HEADLINE
           ================================================== */}
@@ -137,7 +119,7 @@ export default function HeroSection() {
                   duration: 0.7,
                   delay: 0.1,
                 }}
-                className="block text-[48px] xs:text-[56px] sm:text-[64px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-bold font-bingo-italic tracking-wide bg-gradient-to-b from-[#C084FC] to-[#4C1D95] bg] bg-clip-text text-transparent"
+                className="block text-[48px] xs:text-[56px] sm:text-[64px] md:text-[80px] lg:text-[90px] xl:text-[100px] font-black font-sora tracking-[-0.045em] bg-gradient-to-b from-[#C084FC] to-[#4C1D95] bg] bg-clip-text text-transparent"
               >
                 WE BUILD
               </motion.span>
@@ -280,7 +262,23 @@ export default function HeroSection() {
           {/* =====================================================
             INTERACTIVE VISUAL SHOWCASE
         ====================================================== */}
+ <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.15,
+              }}
+              className="flex items-center justify-center gap-2 "
+            >
+              {/* <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#315BEA]" /> */}
 
+              <span className="text-[10px] sm:text-xs md:text-sm font-inter font-normal  uppercase tracking-[0.15em] text-[#65477F]">
+                IDEAS • DESIGN • TECHNOLOGY • GROWTH
+              </span>
+
+              {/* <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#B69A68]" /> */}
+            </motion.div>
           {/* =====================================================
             SCROLL INDICATOR
         ====================================================== */}
@@ -316,6 +314,8 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
+
+        
 
         {/* <div className="w-[108%] overflow-hidden">
           <DesignMarquee />
