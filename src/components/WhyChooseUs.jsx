@@ -70,7 +70,7 @@ const columnTwoImages = [
 
 export function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-[#F7F3EC] px-6 py-24 text-ivory md:px-12 lg:px-20 -mt-10 ">
+    <section className="relative overflow-hidden bg-[#FAF8FF] px-6 py-24 text-ivory md:px-12 lg:px-20 -mt-10 ">
       <div className="relative mx-auto max-w-7xl">
         <div className="relative max-w-2xl md:-left-10">
           <div className="text-[#17113D] inline-flex items-center gap-2 rounded-full border border-[#B8A6C9]/40 bg-[#E8DED2] px-4 py-2 text-xs font-bold uppercase tracking-widest mb-5 -mt-5">

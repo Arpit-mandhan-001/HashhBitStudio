@@ -54,7 +54,7 @@ function ArrowIcon() {
 
 const Blogs = () => {
   return (
-    <section className="relative overflow-hidden py-20 text-zinc-950 sm:py-20 lg:py-18 mb-10 bg-transparent">
+    <section className="relative overflow-hidden py-20 text-zinc-950 sm:py-20 lg:py-18 bg-[#FAF8FF]">
 
       {/* Background glow */}
       <div

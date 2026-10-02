@@ -2,7 +2,7 @@
 
 export default function CuriousMindHero() {
   return (
-    <main className="relative -mt-30 overflow-hidden bg-transparent text-[#24133D]">
+    <main className="relative -mt-30 overflow-hidden bg-[#FAF8FF] text-[#24133D]">
       {/* Perspective Grid */}
       <div className="absolute inset-0 [perspective:900px]">
         <div

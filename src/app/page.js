@@ -21,16 +21,6 @@ export default function Home() {
       {/* Background Interactive Kinetic Canvas with mouse particle reactions */}
       {/* <InteractiveCanvas /> */}
 
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="fixed inset-0 w-full h-full object-cover -z-10"
-      >
-        <source src="/videos/video2.mp4" type="video/mp4" />
-      </video>
-
       {/* Optional overlay */}
       <div className="fixed inset-0 bg-[#F7F3EC]/60 -z-10" />
 

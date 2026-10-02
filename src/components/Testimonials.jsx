@@ -159,7 +159,7 @@ export function Testimonials({ autoplayMs = 7000 }) {
     <section
       className="
         relative min-h-screen overflow-hidden
-        bg-transparent px-5 py-16
+        bg-[#FAF8FF] px-5 py-16
         text-[#111111]
         sm:px-8
         md:px-12 md:py-20

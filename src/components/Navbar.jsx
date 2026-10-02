@@ -186,7 +186,7 @@ export default function Navbar() {
                 damping: 30,
                 stiffness: 280,
               }}
-              className="w-full max-w-xl h-full  border-l border-[#B8A6C9]/40 shadow-2xl p-2 md:p-10 flex flex-col justify-between overflow-y-auto bg-[#FAF8FF]/40 rounded-3xl"
+              className="w-full max-w-xl h-full  border-l border-[#B8A6C9]/40 shadow-2xl p-2 md:p-10 flex flex-col justify-between overflow-y-auto bg-[#FAF8FF] rounded-3xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header inside drawer */}

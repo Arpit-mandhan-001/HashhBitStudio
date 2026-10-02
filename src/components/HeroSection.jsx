@@ -72,7 +72,17 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-full flex flex-col justify-center items-center pt-28 sm:pt-28  px-4 sm:px-6 md:px-12 overflow-hidden">
+      <section className="relative min-h-dvh flex flex-col justify-center items-center pt-28 sm:pt-28  px-4 sm:px-6 md:px-12 overflow-hidden">
+
+        <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed inset-0 w-full h-full object-cover -z-10"
+      >
+        <source src="/videos/video2.mp4" type="video/mp4" />
+      </video>
         {/* =====================================================
           BACKGROUND AMBIENT LIGHTS
       ====================================================== */}

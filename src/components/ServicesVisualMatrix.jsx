@@ -134,7 +134,7 @@ export default function ServicesVisualMatrix({ className = "" }) {
   });
 
   return (
-    <section id="services" className={`relative bg-[#F7F3EC] ${className}`}>
+    <section id="services" className={`relative bg-[#FAF8FF] ${className}`}>
       {/* ========================================================
           DESKTOP
       ======================================================== */}
@@ -147,12 +147,12 @@ export default function ServicesVisualMatrix({ className = "" }) {
         }}
       >
         <div className="sticky top-0 h-screen overflow-hidden">
-          <div className="grid h-full grid-cols-2">
+          <div className="grid h-full grid-cols-2 bg-[#FAF8FF]">
             {/* ==================================================
                 LEFT INTRO
             ================================================== */}
 
-            <div className="relative flex items-center bg-[#F7F3EC] px-8 xl:px-12 2xl:px-20">
+            <div className="relative flex items-center bg-[#FAF8FF] px-8 xl:px-12 2xl:px-20">
               <div className="w-full max-w-3xl">
                 {/* Badge */}
 
@@ -339,7 +339,7 @@ export default function ServicesVisualMatrix({ className = "" }) {
       <div className="lg:hidden">
         {/* Mobile intro */}
 
-        <div className="flex items-center bg-[#F7F3EC] px-6 py-20">
+        <div className="flex items-center bg-[#FAF8FF] px-6 py-20">
           <div className="w-full">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#B8A6C9]/40 bg-[#E8DED2] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#4B2E63]">
               <Sparkles className="h-3.5 w-3.5 text-[#B69A68]" />
